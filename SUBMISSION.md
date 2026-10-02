@@ -17,7 +17,7 @@ Each result compares its evidence with the top keyword match from the same Knowl
 ## Demo
 
 - Live application: [Open TruthGraph](https://truthgraph-mauve.vercel.app/)
-- Source repository: [prabhakarcs786/truthgraph](https://github.com/prabhakarcs786/truthgraph) (private; reviewer access is required).
+- Source repository: [prabhakarcs786/truthgraph](https://github.com/prabhakarcs786/truthgraph) (public; no sign-in is required to review the code).
 - Recording: [Watch the narrated demo — about 1 minute 42 seconds](https://truthgraph-mauve.vercel.app/demo.html), with English neural narration and captions. [Direct MP4](https://truthgraph-mauve.vercel.app/demo/truthgraph-demo.mp4) · [Transcript](https://truthgraph-mauve.vercel.app/demo/narration.txt). No sign-in is required to watch.
 - Guided tour: open the app and choose **Start the guided tour**. No access code is needed.
 - Custom questions: need a judge access code, which keeps the free model quota from being drained by the public. Judges can request it in a comment or DM and I will send it privately.

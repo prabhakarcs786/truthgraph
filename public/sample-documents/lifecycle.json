@@ -1,0 +1,1241 @@
+{
+  "knowledgeBases": [
+    {
+      "_id": "tg-kb-framework-notes",
+      "title": "Node.js & Next.js lifecycle desk",
+      "description": "Original summaries of official Node.js and Next.js release schedules, support policies, and upgrade guides. Claims carry version ranges, effective dates, runtime conditions, and recorded corrections, so the agent can tell which answer applies on a given date.",
+      "kind": "real",
+      "mcpId": null,
+      "suggestedQuestions": [
+        "What Node.js runtime does Next.js 16 require?",
+        "Should I use proxy or middleware in Next.js 16 on the edge runtime?",
+        "What is the default images minimumCacheTTL in Next.js 16?",
+        "Is Node.js 22 still supported?",
+        "What is the warranty on a camera?"
+      ],
+      "showcase": [
+        {
+          "title": "Corrected date",
+          "question": "What is the end-of-life date for Node.js 16?",
+          "asOf": null,
+          "lesson": "The original plan said April 2024. A 2022 announcement moved it to September 11, 2023. Keyword search can surface the outdated plan; TruthGraph follows the recorded correction."
+        },
+        {
+          "title": "Today's status",
+          "question": "Does Node.js 20 still get security updates?",
+          "asOf": null,
+          "lesson": "Three dated support phases match the words. Only the phase effective today applies: Node.js 20 reached End-of-Life on April 30, 2026."
+        },
+        {
+          "title": "Future date",
+          "question": "Will Next.js 15 still receive security fixes on 2026-11-01?",
+          "asOf": null,
+          "lesson": "Next.js 15 is in Maintenance LTS today, but its support window ends on October 21, 2026. The date in the question changes the answer."
+        },
+        {
+          "title": "Missing context",
+          "question": "Should I use proxy or middleware in Next.js 16?",
+          "asOf": null,
+          "lesson": "The answer depends on the runtime: proxy runs only on Node.js. TruthGraph asks instead of guessing. Add \"on the edge runtime\" to resolve it."
+        },
+        {
+          "title": "Sources disagree",
+          "question": "Will Node.js 27 be promoted to LTS?",
+          "asOf": null,
+          "lesson": "Two official Node.js pages disagree: the Release Working Group README says odd-numbered lines are never LTS; nodejs.org says every major from 27 is. A curator records the decision once in Curate."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "_id": "tg-source-next15-install",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "title": "Next.js 15 installation",
+      "publisher": "Vercel / Next.js",
+      "url": "https://nextjs.org/docs/15/app/getting-started/installation",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-09-30"
+    },
+    {
+      "_id": "tg-source-next15-upgrade",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "title": "Next.js 15 upgrade guide",
+      "publisher": "Vercel / Next.js",
+      "url": "https://nextjs.org/docs/app/guides/upgrading/version-15",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-09-30"
+    },
+    {
+      "_id": "tg-source-next16-upgrade",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "title": "Next.js 16 upgrade guide",
+      "publisher": "Vercel / Next.js",
+      "url": "https://nextjs.org/docs/app/guides/upgrading/version-16",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-next-support",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "title": "Next.js support policy",
+      "publisher": "Vercel / Next.js",
+      "url": "https://nextjs.org/support-policy",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-node-release-wg",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "title": "Node.js Release Working Group schedule",
+      "publisher": "Node.js Release Working Group",
+      "url": "https://github.com/nodejs/Release",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-node-releases",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "title": "Node.js Releases",
+      "publisher": "Node.js / OpenJS Foundation",
+      "url": "https://nodejs.org/en/about/previous-releases",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-node16-eol",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "title": "Bringing forward the End-of-Life Date for Node.js 16",
+      "publisher": "Node.js / OpenJS Foundation",
+      "url": "https://nodejs.org/en/blog/announcements/nodejs16-eol",
+      "authority": "primary",
+      "publishedAt": "2022-06-08",
+      "reviewedAt": "2026-10-01"
+    }
+  ],
+  "claims": [
+    {
+      "_id": "tg-claim-runtime-15",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next15-install",
+      "subject": "Next.js",
+      "predicate": "minimum Node.js runtime",
+      "value": "18.18.0",
+      "statement": "Next.js 15 requires Node.js 18.18 or later. This is a framework minimum, not a Node.js lifecycle recommendation.",
+      "aliases": [
+        "node",
+        "nodejs",
+        "runtime",
+        "node version"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=15.0.0 <16.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-runtime-16",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next16-upgrade",
+      "subject": "Next.js",
+      "predicate": "minimum Node.js runtime",
+      "value": "20.9.0",
+      "statement": "Next.js 16 requires Node.js 20.9.0 or later; Node.js 18 does not meet this framework requirement.",
+      "aliases": [
+        "node",
+        "nodejs",
+        "runtime",
+        "node version"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=16.0.0 <17.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-request-15",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next15-upgrade",
+      "subject": "Next.js",
+      "predicate": "synchronous request API access",
+      "value": "temporary compatibility",
+      "statement": "Next.js 15 introduces asynchronous request APIs but temporarily permits synchronous access during migration.",
+      "aliases": [
+        "cookies",
+        "headers",
+        "params",
+        "request apis",
+        "synchronous",
+        "async"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=15.0.0 <16.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-request-16",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next16-upgrade",
+      "subject": "Next.js",
+      "predicate": "synchronous request API access",
+      "value": "removed",
+      "statement": "Next.js 16 removes synchronous access to request-time APIs, including cookies, headers, params, and searchParams.",
+      "aliases": [
+        "cookies",
+        "headers",
+        "params",
+        "request apis",
+        "synchronous",
+        "async"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=16.0.0 <17.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-build-15",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next15-install",
+      "subject": "Next.js",
+      "predicate": "default production bundler",
+      "value": "webpack",
+      "statement": "The Next.js 15 installation guide describes Turbopack production builds as opt-in; a standard next build uses webpack.",
+      "aliases": [
+        "webpack",
+        "turbopack",
+        "bundler",
+        "build pipeline"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=15.0.0 <16.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-build-16",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next16-upgrade",
+      "subject": "Next.js",
+      "predicate": "default production bundler",
+      "value": "turbopack",
+      "statement": "Next.js 16 defaults to Turbopack. An unhandled custom webpack configuration can fail the default build; next build --webpack explicitly opts out.",
+      "aliases": [
+        "webpack",
+        "turbopack",
+        "bundler",
+        "build pipeline"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=16.0.0 <17.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-lint-15",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next15-install",
+      "subject": "Next.js",
+      "predicate": "next lint command availability",
+      "value": "available",
+      "statement": "The Next.js 15 installation documentation includes the next lint command.",
+      "aliases": [
+        "lint",
+        "eslint",
+        "biome",
+        "linting"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=15.0.0 <16.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-lint-16",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next16-upgrade",
+      "subject": "Next.js",
+      "predicate": "next lint command availability",
+      "value": "removed",
+      "statement": "Next.js 16 removes next lint and automatic build-time linting. Run ESLint or Biome directly.",
+      "aliases": [
+        "lint",
+        "eslint",
+        "biome",
+        "linting"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=16.0.0 <17.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-proxy-15",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next16-upgrade",
+      "subject": "Next.js",
+      "predicate": "middleware and proxy convention",
+      "value": "middleware",
+      "statement": "Next.js 15 uses the middleware convention; the version 16 upgrade guide documents its subsequent deprecation.",
+      "aliases": [
+        "middleware",
+        "proxy",
+        "edge"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=15.0.0 <16.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-proxy-16",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next16-upgrade",
+      "subject": "Next.js",
+      "predicate": "middleware and proxy convention",
+      "value": "proxy",
+      "statement": "Next.js 16 deprecates middleware in favor of proxy; on the Node.js runtime, use the proxy convention.",
+      "aliases": [
+        "middleware",
+        "proxy",
+        "edge"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=16.0.0 <17.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "runtime",
+          "value": "nodejs"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-proxy-16-edge",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next16-upgrade",
+      "subject": "Next.js",
+      "predicate": "middleware and proxy convention",
+      "value": "middleware",
+      "statement": "Next.js 16 does not support the edge runtime in proxy, whose runtime is nodejs and cannot be configured; to keep using the edge runtime, keep using middleware.",
+      "aliases": [
+        "middleware",
+        "proxy",
+        "edge"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=16.0.0 <17.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "runtime",
+          "value": "edge"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-image-ttl-15",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next16-upgrade",
+      "subject": "Next.js",
+      "predicate": "default images.minimumCacheTTL",
+      "value": "60 seconds",
+      "statement": "Before Next.js 16, the default images.minimumCacheTTL was 60 seconds.",
+      "aliases": [
+        "image",
+        "images",
+        "minimumcachettl",
+        "cache ttl",
+        "next/image"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=15.0.0 <16.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-image-ttl-16",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next16-upgrade",
+      "subject": "Next.js",
+      "predicate": "default images.minimumCacheTTL",
+      "value": "4 hours (14400 seconds)",
+      "statement": "Next.js 16 changes the default images.minimumCacheTTL from 60 seconds to 4 hours (14400 seconds), reducing revalidation cost for images without cache-control headers.",
+      "aliases": [
+        "image",
+        "images",
+        "minimumcachettl",
+        "cache ttl",
+        "next/image"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=16.0.0 <17.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-typescript-16",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next16-upgrade",
+      "subject": "Next.js",
+      "predicate": "minimum TypeScript version",
+      "value": "5.1.0",
+      "statement": "Next.js 16 requires TypeScript 5.1.0 or later.",
+      "aliases": [
+        "typescript",
+        "ts",
+        "tsc"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=16.0.0 <17.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-next16-support-active",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next-support",
+      "subject": "Next.js",
+      "predicate": "support status",
+      "value": "Active LTS",
+      "statement": "Next.js 16.x, released on October 21, 2025, is the Active LTS version and stays in Active LTS until the next major version is released.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security fixes"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=16.0.0 <17.0.0"
+      },
+      "effectiveFrom": "2025-10-21",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-next15-support-active",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next-support",
+      "subject": "Next.js",
+      "predicate": "support status",
+      "value": "Active LTS",
+      "statement": "Next.js 15.x was in Active LTS from its release on October 21, 2024 until Next.js 16 was released on October 21, 2025.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security fixes"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=15.0.0 <16.0.0"
+      },
+      "effectiveFrom": "2024-10-21",
+      "effectiveUntil": "2025-10-21",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-next15-support-maintenance",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next-support",
+      "subject": "Next.js",
+      "predicate": "support status",
+      "value": "Maintenance LTS",
+      "statement": "Next.js 15.x is in Maintenance LTS from October 21, 2025, receiving only critical bug fixes and essential security updates; the policy keeps a major in Maintenance LTS until two years after its initial release on October 21, 2024.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security fixes"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=15.0.0 <16.0.0"
+      },
+      "effectiveFrom": "2025-10-21",
+      "effectiveUntil": "2026-10-21",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-next15-support-ended",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next-support",
+      "subject": "Next.js",
+      "predicate": "support status",
+      "value": "outside the LTS policy",
+      "statement": "Under the support policy's two-year window from its October 21, 2024 release, Next.js 15.x is outside the LTS policy from October 21, 2026.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security fixes"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=15.0.0 <16.0.0"
+      },
+      "effectiveFrom": "2026-10-21",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-next14-support",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-next-support",
+      "subject": "Next.js",
+      "predicate": "support status",
+      "value": "unsupported",
+      "statement": "The Next.js support policy lists 14.x, released on October 26, 2023, under Unsupported Versions.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security fixes"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Next.js",
+        "aliases": [
+          "Next",
+          "Next.js"
+        ],
+        "range": ">=14.0.0 <15.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node16-eol-planned",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node16-eol",
+      "subject": "Node.js",
+      "predicate": "end-of-life date",
+      "value": "April 2024",
+      "statement": "When Node.js 16 was released, its End-of-Life was planned for April 2024.",
+      "aliases": [
+        "gallium",
+        "end-of-life",
+        "end of life",
+        "eol"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=16.0.0 <17.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node16-eol-revised",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node16-eol",
+      "subject": "Node.js",
+      "predicate": "end-of-life date",
+      "value": "2023-09-11",
+      "statement": "The Node.js project brought the Node.js 16 End-of-Life forward by seven months to September 11, 2023, to coincide with the end of support for OpenSSL 1.1.1.",
+      "aliases": [
+        "gallium",
+        "end-of-life",
+        "end of life",
+        "eol"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=16.0.0 <17.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": [
+        {
+          "kind": "corrects",
+          "targetId": "tg-claim-node16-eol-planned",
+          "reason": "The June 2022 announcement replaced the originally planned April 2024 End-of-Life date with September 11, 2023."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-node18-maintenance",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "Maintenance LTS",
+      "statement": "Node.js 18 (Hydrogen) was in Maintenance LTS from October 18, 2023 until April 30, 2025, receiving only critical bug fixes and security updates.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=18.0.0 <19.0.0"
+      },
+      "effectiveFrom": "2023-10-18",
+      "effectiveUntil": "2025-04-30",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node18-eol",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "End-of-Life",
+      "statement": "Node.js 18 reached End-of-Life on April 30, 2025 and no longer receives updates from the Node.js project.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=18.0.0 <19.0.0"
+      },
+      "effectiveFrom": "2025-04-30",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node20-active",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "Active LTS",
+      "statement": "Node.js 20 (Iron) was in Active LTS from October 24, 2023 until October 22, 2024.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=20.0.0 <21.0.0"
+      },
+      "effectiveFrom": "2023-10-24",
+      "effectiveUntil": "2024-10-22",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node20-maintenance",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "Maintenance LTS",
+      "statement": "Node.js 20 was in Maintenance LTS from October 22, 2024 until April 30, 2026, receiving only critical bug fixes and security updates.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=20.0.0 <21.0.0"
+      },
+      "effectiveFrom": "2024-10-22",
+      "effectiveUntil": "2026-04-30",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node20-eol",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "End-of-Life",
+      "statement": "Node.js 20 reached End-of-Life on April 30, 2026 and no longer receives updates from the Node.js project.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=20.0.0 <21.0.0"
+      },
+      "effectiveFrom": "2026-04-30",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node22-active",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "Active LTS",
+      "statement": "Node.js 22 (Jod) was in Active LTS from October 29, 2024 until October 21, 2025.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=22.0.0 <23.0.0"
+      },
+      "effectiveFrom": "2024-10-29",
+      "effectiveUntil": "2025-10-21",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node22-maintenance",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "Maintenance LTS",
+      "statement": "Node.js 22 is in Maintenance LTS from October 21, 2025 until its scheduled End-of-Life on April 30, 2027, receiving only critical bug fixes and security updates.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=22.0.0 <23.0.0"
+      },
+      "effectiveFrom": "2025-10-21",
+      "effectiveUntil": "2027-04-30",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node22-eol",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "End-of-Life",
+      "statement": "Node.js 22 is scheduled to reach End-of-Life on April 30, 2027; the schedule notes that dates are subject to change.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=22.0.0 <23.0.0"
+      },
+      "effectiveFrom": "2027-04-30",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node24-active",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "Active LTS",
+      "statement": "Node.js 24 (Krypton) is in Active LTS from October 28, 2025 until October 20, 2026.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=24.0.0 <25.0.0"
+      },
+      "effectiveFrom": "2025-10-28",
+      "effectiveUntil": "2026-10-20",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node24-maintenance",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "Maintenance LTS",
+      "statement": "Node.js 24 is scheduled to be in Maintenance LTS from October 20, 2026 until its End-of-Life on April 30, 2028.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=24.0.0 <25.0.0"
+      },
+      "effectiveFrom": "2026-10-20",
+      "effectiveUntil": "2028-04-30",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node24-eol",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "End-of-Life",
+      "statement": "Node.js 24 is scheduled to reach End-of-Life on April 30, 2028; the schedule notes that dates are subject to change.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=24.0.0 <25.0.0"
+      },
+      "effectiveFrom": "2028-04-30",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node26-current",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "Current",
+      "statement": "Node.js 26 is the Current release from May 5, 2026 and is scheduled to move to Active LTS on October 28, 2026.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=26.0.0 <27.0.0"
+      },
+      "effectiveFrom": "2026-05-05",
+      "effectiveUntil": "2026-10-28",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node26-active",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "Active LTS",
+      "statement": "Node.js 26 is scheduled to be in Active LTS from October 28, 2026 until October 20, 2027.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=26.0.0 <27.0.0"
+      },
+      "effectiveFrom": "2026-10-28",
+      "effectiveUntil": "2027-10-20",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node26-maintenance",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "support status",
+      "value": "Maintenance LTS",
+      "statement": "Node.js 26 is scheduled to be in Maintenance LTS from October 20, 2027 until its End-of-Life on April 30, 2029.",
+      "aliases": [
+        "support",
+        "supported",
+        "still supported",
+        "lts",
+        "maintenance",
+        "security updates"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=26.0.0 <27.0.0"
+      },
+      "effectiveFrom": "2027-10-20",
+      "effectiveUntil": "2029-04-30",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node-odd-lts-wg",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-release-wg",
+      "subject": "Node.js",
+      "predicate": "LTS promotion of odd-numbered release lines",
+      "value": "not promoted to LTS",
+      "statement": "The Node.js Release Working Group schedule states that odd-numbered release lines are not promoted to LTS and do not go through the Active LTS or Maintenance phases.",
+      "aliases": [
+        "lts",
+        "odd-numbered",
+        "odd",
+        "promoted",
+        "long term support"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node-odd-lts-historical",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-releases",
+      "subject": "Node.js",
+      "predicate": "LTS promotion of odd-numbered release lines",
+      "value": "not promoted to LTS",
+      "statement": "Up to Node.js 26, odd-numbered releases become unsupported after six months, while even-numbered releases move to Active LTS.",
+      "aliases": [
+        "lts",
+        "odd-numbered",
+        "odd",
+        "promoted",
+        "long term support"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": "<27.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-node-annual-lts",
+      "knowledgeBaseId": "tg-kb-framework-notes",
+      "sourceId": "tg-source-node-releases",
+      "subject": "Node.js",
+      "predicate": "LTS promotion of odd-numbered release lines",
+      "value": "promoted to LTS",
+      "statement": "Starting with Node.js 27, the release cycle is annual and every major version moves to LTS after its six-month Current phase (and six additional months of Alpha phase).",
+      "aliases": [
+        "lts",
+        "odd-numbered",
+        "odd",
+        "promoted",
+        "long term support",
+        "annual"
+      ],
+      "exclusive": true,
+      "version": {
+        "subject": "Node.js",
+        "aliases": [
+          "Node",
+          "Node.js"
+        ],
+        "range": ">=27.0.0"
+      },
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    }
+  ]
+}

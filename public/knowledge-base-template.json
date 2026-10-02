@@ -1,0 +1,42 @@
+{
+  "knowledgeBases": [
+    {
+      "_id": "example-base",
+      "title": "Example only - replace with your corpus",
+      "description": "Synthetic JSON template showing the required knowledge-base structure.",
+      "kind": "synthetic",
+      "mcpId": null,
+      "suggestedQuestions": ["What is the example return window?"]
+    }
+  ],
+  "sources": [
+    {
+      "_id": "example-source",
+      "knowledgeBaseId": "example-base",
+      "title": "Synthetic source - replace with an actual publication",
+      "publisher": "Example author",
+      "url": "https://example.org/replace-with-a-real-source",
+      "authority": "unverified",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    }
+  ],
+  "claims": [
+    {
+      "_id": "example-claim",
+      "knowledgeBaseId": "example-base",
+      "sourceId": "example-source",
+      "subject": "Example policy",
+      "predicate": "return window",
+      "value": "30 days",
+      "statement": "This synthetic example policy has a return window of 30 days. Replace this statement with your real source-backed claim.",
+      "aliases": ["returns", "return", "refund", "return window"],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    }
+  ]
+}

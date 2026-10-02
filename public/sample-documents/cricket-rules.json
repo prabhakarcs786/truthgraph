@@ -1,0 +1,855 @@
+{
+  "knowledgeBases": [
+    {
+      "_id": "tg-kb-cricket-laws",
+      "title": "Cricket rules desk",
+      "description": "Original summaries of the MCC Laws of Cricket and ICC international playing conditions. Claims record when each rule took effect and whether it applies to club cricket under the Laws or to international matches, which sometimes changed on different dates.",
+      "kind": "real",
+      "mcpId": null,
+      "suggestedQuestions": [
+        "Is a bunny-hop boundary catch allowed in club cricket?",
+        "How long does a new batter have to be ready in a T20I?",
+        "Can bowlers use saliva to shine the ball?",
+        "After a batter is caught, who faces the next ball?",
+        "How many players are in a Hundred team?"
+      ],
+      "showcase": [
+        {
+          "title": "New edition of the Laws",
+          "question": "Is a bunny-hop boundary catch allowed in club cricket?",
+          "asOf": null,
+          "lesson": "The 2026 MCC Laws took effect on 1 October 2026: a fielder may touch the ball only once while airborne beyond the rope. The older rule that allowed it applied until 30 September 2026."
+        },
+        {
+          "title": "Same date, different level",
+          "question": "Was a bunny-hop boundary catch allowed in club cricket on 2026-03-01?",
+          "asOf": null,
+          "lesson": "On 1 March 2026, club cricket still followed the old Law, while international cricket had banned the bunny hop since June 2025. One date, two correct answers, depending on the level."
+        },
+        {
+          "title": "Depends on the format",
+          "question": "How long does a new batter have to be ready?",
+          "asOf": null,
+          "lesson": "Club cricket under the Laws allows three minutes, Tests and ODIs two, and T20 internationals 90 seconds. TruthGraph asks for the match type instead of guessing."
+        },
+        {
+          "title": "Rule replaced",
+          "question": "After a batter is caught, who faces the next ball?",
+          "asOf": null,
+          "lesson": "Since October 2022 the new batter always faces, whether or not the batters crossed. Older explanations still describe the crossing rule."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "_id": "tg-source-ck-mcc-2026",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "MCC announces new edition of Laws from 1 October 2026",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://www.lords.org/lords/news-stories/mcc-announces-new-edition-of-laws-from-1-october-2026",
+      "authority": "primary",
+      "publishedAt": "2026-02-03",
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-law19",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "Laws of Cricket – Law 19: Boundaries",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://lawsofcricket.lords.org/laws-of-cricket/the-over-scoring-runs-dead-ball-and-extras/boundaries",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-espn-2025",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "MCC changes rule to make boundary catching with bunny hops illegal",
+      "publisher": "ESPNcricinfo",
+      "url": "https://www.cricinfo.com/story/mcc-changes-rule-to-make-boundary-catching-with-bunny-hops-illegal-1490045",
+      "authority": "secondary",
+      "publishedAt": "2025-06-13",
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-icc-2025",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "Several changes made to ICC Playing Conditions",
+      "publisher": "International Cricket Council (ICC)",
+      "url": "https://www.icc-cricket.com/news/several-changes-made-to-icc-playing-conditions",
+      "authority": "primary",
+      "publishedAt": "2025-06-27",
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-mcc-2022",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "MCC's new code of Laws for 2022 come into force",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://www.lords.org/lords/news-stories/mcc-announces-new-code-of-laws-from-1-october-2022",
+      "authority": "primary",
+      "publishedAt": "2022-10-01",
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-icc-2022",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "ICC announces changes to Playing Conditions",
+      "publisher": "International Cricket Council (ICC)",
+      "url": "https://www.icc-cricket.com/media-releases/icc-announces-changes-to-playing-conditions",
+      "authority": "primary",
+      "publishedAt": "2022-09-20",
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-timed-out-2023",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "MCC statement on Timed Out in Men's ICC Cricket World Cup",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://www.lords.org/lords/news-stories/mcc-statement-on-timed-out-in-men-s-cricket-world",
+      "authority": "primary",
+      "publishedAt": "2023-11-10",
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-law1",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "Laws of Cricket – Law 1: The Players",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://lawsofcricket.lords.org/laws-of-cricket/setting-up-the-game/law-1-the-players",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-law36",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "Laws of Cricket – Law 36: Leg Before Wicket",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://lawsofcricket.lords.org/laws-of-cricket/appeals-dismissals/leg-before-wicket",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-law14",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "Laws of Cricket – Law 14: The Follow-on",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://lawsofcricket.lords.org/laws-of-cricket/innings-and-results/the-follow-on",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-law17",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "Laws of Cricket – Law 17: The Over",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://lawsofcricket.lords.org/laws-of-cricket/the-over-scoring-runs-dead-ball-and-extras/the-over",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-law21",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "Laws of Cricket – Law 21: No Ball",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://lawsofcricket.lords.org/laws-of-cricket/the-over-scoring-runs-dead-ball-and-extras/no-ball",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-law22",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "Laws of Cricket – Law 22: Wide Ball",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://lawsofcricket.lords.org/laws-of-cricket/the-over-scoring-runs-dead-ball-and-extras/wide-ball",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-law25",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "Laws of Cricket – Law 25: Batter's Innings; Runners",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://lawsofcricket.lords.org/laws-of-cricket/players-substitutes-runners-and-practice/batters-innings-runners",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-law28",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "Laws of Cricket – Law 28: The Fielder",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://lawsofcricket.lords.org/laws-of-cricket/players-substitutes-runners-and-practice/the-fielder",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ck-law33",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "title": "Laws of Cricket – Law 33: Caught",
+      "publisher": "Marylebone Cricket Club (MCC)",
+      "url": "https://lawsofcricket.lords.org/laws-of-cricket/appeals-dismissals/caught",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    }
+  ],
+  "claims": [
+    {
+      "_id": "tg-claim-ck-catch-club-old",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-espn-2025",
+      "subject": "Cricket",
+      "predicate": "airborne catch beyond the boundary",
+      "value": "allowed if the last ground contact before the first touch was inside the boundary",
+      "statement": "Under the MCC Laws before the 2026 edition, only a fielder's last contact with the ground before first touching the ball had to be inside the boundary, so a fielder could leap from beyond the rope, touch the ball more than once while airborne, and still take a fair catch.",
+      "aliases": [
+        "bunny hop",
+        "bunny-hop",
+        "boundary catch",
+        "airborne",
+        "beyond the boundary",
+        "beyond the rope"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": "2026-10-01",
+      "conditions": [
+        {
+          "key": "level",
+          "value": "club"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-catch-club-new",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law19",
+      "subject": "Cricket",
+      "predicate": "airborne catch beyond the boundary",
+      "value": "only one airborne touch allowed from beyond the boundary",
+      "statement": "Since the 2026 edition of the MCC Laws took effect on 1 October 2026, a fielder who jumps from beyond the boundary may touch the ball only once while airborne; any later contact with the ground outside the boundary during that delivery scores a boundary. This ends bunny-hop catches in cricket played under the Laws.",
+      "aliases": [
+        "bunny hop",
+        "bunny-hop",
+        "boundary catch",
+        "airborne",
+        "beyond the boundary",
+        "beyond the rope"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2026-10-01",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "level",
+          "value": "club"
+        }
+      ],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-ck-catch-club-old",
+          "reason": "The 2026 edition of the MCC Laws rewrote Law 19.5.2 to allow only one airborne touch from beyond the boundary."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-ck-catch-intl-old",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-icc-2025",
+      "subject": "Cricket",
+      "predicate": "airborne catch beyond the boundary",
+      "value": "allowed, as under the MCC Law",
+      "statement": "Until ICC changed its playing conditions in June 2025, international cricket followed the MCC Law on boundary catches, which allowed repeated airborne touches beyond the rope if the last ground contact before the first touch was inside the boundary.",
+      "aliases": [
+        "bunny hop",
+        "bunny-hop",
+        "boundary catch",
+        "airborne",
+        "beyond the boundary",
+        "beyond the rope"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": "2025-06-17",
+      "conditions": [
+        {
+          "key": "level",
+          "value": "international"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-catch-intl-new",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-icc-2025",
+      "subject": "Cricket",
+      "predicate": "airborne catch beyond the boundary",
+      "value": "only one airborne touch allowed from beyond the boundary",
+      "statement": "ICC playing conditions introduced the one-airborne-touch boundary-catch rule before the MCC Laws did: from 17 June 2025 in Tests, 2 July 2025 in ODIs, and 10 July 2025 in T20 internationals.",
+      "aliases": [
+        "bunny hop",
+        "bunny-hop",
+        "boundary catch",
+        "airborne",
+        "beyond the boundary",
+        "beyond the rope"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2025-06-17",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "level",
+          "value": "international"
+        }
+      ],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-ck-catch-intl-old",
+          "reason": "ICC adopted the new boundary-catch rule in its June 2025 playing conditions, ahead of the MCC Laws."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-ck-saliva",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-mcc-2022",
+      "subject": "Cricket",
+      "predicate": "using saliva to shine the ball",
+      "value": "banned",
+      "statement": "Since 1 October 2022 the MCC Laws and ICC playing conditions both ban saliva on the ball; sweat is the only natural substance allowed, and using saliva is treated like any other unfair change to the ball's condition. The ban made a temporary Covid-era international measure permanent.",
+      "aliases": [
+        "saliva",
+        "spit",
+        "shine the ball",
+        "shining the ball",
+        "polish the ball",
+        "sweat"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2022-10-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-caught-old",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-icc-2022",
+      "subject": "Cricket",
+      "predicate": "who faces the next ball after a catch",
+      "value": "depended on whether the batters crossed",
+      "statement": "Before 1 October 2022, if the batters had crossed before a catch was taken, the not-out batter stayed at the striker's end to face the next ball and the new batter went to the non-striker's end.",
+      "aliases": [
+        "caught",
+        "caught out",
+        "faces the next ball",
+        "on strike",
+        "crossed"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": "2022-10-01",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-caught-new",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-mcc-2022",
+      "subject": "Cricket",
+      "predicate": "who faces the next ball after a catch",
+      "value": "the new batter faces the next ball",
+      "statement": "Since 1 October 2022, when a batter is out caught, the incoming batter goes to the striker's end and faces the next ball whether or not the batters crossed, unless the over has ended.",
+      "aliases": [
+        "caught",
+        "caught out",
+        "faces the next ball",
+        "on strike",
+        "crossed"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2022-10-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-ck-caught-old",
+          "reason": "The 2022 Laws and ICC playing conditions made the new batter face the next ball regardless of crossing."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-ck-timed-club",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-timed-out-2023",
+      "subject": "Cricket",
+      "predicate": "time for the incoming batter to be ready",
+      "value": "3 minutes",
+      "statement": "Under MCC Law 40, an incoming batter must be ready to receive the ball, or for the partner to receive it, within three minutes of the dismissal or retirement, or may be given out timed out on appeal.",
+      "aliases": [
+        "new batter",
+        "incoming batter",
+        "timed out",
+        "be ready",
+        "ready"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "match type",
+          "value": "club"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-timed-test",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-icc-2022",
+      "subject": "Cricket",
+      "predicate": "time for the incoming batter to be ready",
+      "value": "2 minutes",
+      "statement": "Since 1 October 2022, ICC playing conditions require an incoming batter in a Test to be ready to take strike within two minutes, shorter than the three minutes in the MCC Laws.",
+      "aliases": [
+        "new batter",
+        "incoming batter",
+        "timed out",
+        "be ready",
+        "ready"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2022-10-01",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "match type",
+          "value": "Test"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-timed-odi",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-icc-2022",
+      "subject": "Cricket",
+      "predicate": "time for the incoming batter to be ready",
+      "value": "2 minutes",
+      "statement": "Since 1 October 2022, ICC playing conditions require an incoming batter in an ODI to be ready to take strike within two minutes, shorter than the three minutes in the MCC Laws.",
+      "aliases": [
+        "new batter",
+        "incoming batter",
+        "timed out",
+        "be ready",
+        "ready"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2022-10-01",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "match type",
+          "value": "ODI"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-timed-t20i",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-icc-2022",
+      "subject": "Cricket",
+      "predicate": "time for the incoming batter to be ready",
+      "value": "90 seconds",
+      "statement": "In T20 internationals, ICC playing conditions give an incoming batter ninety seconds to be ready to take strike; the 2022 changes kept this threshold.",
+      "aliases": [
+        "new batter",
+        "incoming batter",
+        "timed out",
+        "be ready",
+        "ready"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "match type",
+          "value": "T20I"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-players",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law1",
+      "subject": "Cricket",
+      "predicate": "number of players per side",
+      "value": "eleven",
+      "statement": "A cricket match is played between two sides of eleven players, one of whom is captain. Sides may agree to play with fewer or more, but no more than eleven may field at any time.",
+      "aliases": [
+        "how many players",
+        "players",
+        "eleven",
+        "team size",
+        "side"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-lbw",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law36",
+      "subject": "Cricket",
+      "predicate": "leg before wicket (LBW)",
+      "value": "out only if every LBW condition applies",
+      "statement": "A batter is out LBW only if all of these apply: the delivery is not a no ball; the ball pitches in line between wicket and wicket or on the off side, so a ball pitching outside leg stump cannot be LBW; it hits the batter's person without first touching the bat; the impact is in line, or outside off stump when no genuine shot is offered; and the ball would otherwise have hit the wicket.",
+      "aliases": [
+        "lbw",
+        "leg before wicket",
+        "leg before",
+        "pitching outside leg",
+        "outside leg stump"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-laminated-junior",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-mcc-2026",
+      "subject": "Cricket",
+      "predicate": "laminated bats",
+      "value": "junior cricket only",
+      "statement": "Before the 2026 edition of the MCC Laws, laminated bats were legal only in junior cricket.",
+      "aliases": [
+        "laminated bat",
+        "laminated bats",
+        "type d bat",
+        "bat"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": "2026-10-01",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-laminated-open-age",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-mcc-2026",
+      "subject": "Cricket",
+      "predicate": "laminated bats",
+      "value": "allowed in open-age cricket at lower levels",
+      "statement": "Since the 2026 edition of the MCC Laws took effect on 1 October 2026, laminated (Type D) bats are legal in open-age cricket, not only junior cricket, at the lower levels of the game set by each country's governing body.",
+      "aliases": [
+        "laminated bat",
+        "laminated bats",
+        "type d bat",
+        "bat"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2026-10-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-ck-laminated-junior",
+          "reason": "The 2026 edition extended laminated bats from junior cricket to open-age cricket."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-ck-over",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law17",
+      "subject": "Cricket",
+      "predicate": "balls in an over",
+      "value": "six valid balls",
+      "statement": "The ball is bowled from each end in turn, in overs of six valid balls; wides and no balls do not count as one of the six.",
+      "aliases": [
+        "over",
+        "balls in an over",
+        "how many balls",
+        "six balls"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-consecutive-overs",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law17",
+      "subject": "Cricket",
+      "predicate": "bowling two overs in a row",
+      "value": "not allowed",
+      "statement": "A bowler may not bowl two overs in a row, or parts of two consecutive overs, in the same innings.",
+      "aliases": [
+        "consecutive overs",
+        "two overs in a row",
+        "back-to-back overs",
+        "same bowler"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-six",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law19",
+      "subject": "Cricket",
+      "predicate": "when a hit scores six",
+      "value": "off the bat and first landing beyond the boundary",
+      "statement": "A six is scored only if the ball was hit by the bat and first lands beyond the boundary without touching the ground inside the field.",
+      "aliases": [
+        "six",
+        "sixer",
+        "6 runs",
+        "over the rope"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-four",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law19",
+      "subject": "Cricket",
+      "predicate": "when the ball scores four",
+      "value": "reaches the boundary after bouncing, or not off the bat",
+      "statement": "A four is scored when the ball reaches the boundary after first touching the ground inside the field, or when it crosses the boundary without having been hit by the bat.",
+      "aliases": [
+        "four",
+        "boundary four",
+        "4 runs",
+        "bounces over the rope"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-overthrow",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-mcc-2026",
+      "subject": "Cricket",
+      "predicate": "what counts as an overthrow",
+      "value": "only a throw towards the wickets",
+      "statement": "Since the 2026 edition of the MCC Laws (1 October 2026), runs for an overthrow apply only when a fielder throws the ball towards the wickets; a ball that crosses the boundary after a fielder's attempt to stop it is a misfield, not an overthrow.",
+      "aliases": [
+        "overthrow",
+        "overthrows",
+        "misfield"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2026-10-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-no-ball",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law21",
+      "subject": "Cricket",
+      "predicate": "no ball penalty",
+      "value": "one run plus any runs scored",
+      "statement": "A no ball gives the batting side one penalty run immediately, in addition to any runs scored from that ball. The bowler's front foot must land with some part of it behind the popping crease, or it is a no ball.",
+      "aliases": [
+        "no ball",
+        "no-ball",
+        "noball",
+        "front foot",
+        "overstepping"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-wide",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law22",
+      "subject": "Cricket",
+      "predicate": "wide ball penalty",
+      "value": "one run",
+      "statement": "A wide gives the batting side one penalty run immediately, in addition to any other runs, and the ball does not count as one of the over.",
+      "aliases": [
+        "wide",
+        "wide ball",
+        "wides"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-caught",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law33",
+      "subject": "Cricket",
+      "predicate": "out caught",
+      "value": "a fair catch off the bat before the ball touches the ground",
+      "statement": "A batter is out caught when a fair delivery, not a no ball, touches the bat and is then held by a fielder before it touches the ground.",
+      "aliases": [
+        "out caught",
+        "how is a catch",
+        "fair catch",
+        "catch"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-follow-on",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law14",
+      "subject": "Cricket",
+      "predicate": "follow-on",
+      "value": "200 runs in a 5-day match",
+      "statement": "In a two-innings match, the side batting first can make the other side follow on if it leads by at least 200 runs in a match of five days or more, 150 in a three- or four-day match, 100 in a two-day match, or 75 in a one-day match.",
+      "aliases": [
+        "follow-on",
+        "follow on",
+        "enforce the follow-on"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-retirement",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law25",
+      "subject": "Cricket",
+      "predicate": "retiring during an innings",
+      "value": "retired not out if hurt; retired out otherwise unless allowed back",
+      "statement": "A batter who retires through illness, injury, or another unavoidable cause may resume and is otherwise recorded as retired not out. A batter who retires for any other reason may return only with the opposing captain's consent, and is otherwise recorded as retired out.",
+      "aliases": [
+        "retired out",
+        "retired hurt",
+        "retire",
+        "retired not out"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-helmet",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-law28",
+      "subject": "Cricket",
+      "predicate": "ball hitting a fielder's helmet on the ground",
+      "value": "5 penalty runs and dead ball",
+      "statement": "If the ball in play hits a fielding side's helmet lying on the ground, the ball becomes dead and the batting side is awarded 5 penalty runs.",
+      "aliases": [
+        "helmet",
+        "penalty runs",
+        "5 runs",
+        "five runs"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ck-last-over",
+      "knowledgeBaseId": "tg-kb-cricket-laws",
+      "sourceId": "tg-source-ck-mcc-2026",
+      "subject": "Cricket",
+      "predicate": "wicket in the last over of the day",
+      "value": "the over is completed",
+      "statement": "Since the 2026 edition of the MCC Laws (1 October 2026), if a wicket falls in the final over of a day in multi-day cricket after the time for close of play, the over is bowled in full instead of stumps being drawn.",
+      "aliases": [
+        "last over",
+        "close of play",
+        "stumps",
+        "end of the day"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2026-10-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    }
+  ]
+}

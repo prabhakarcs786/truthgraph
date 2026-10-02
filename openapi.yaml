@@ -1,0 +1,373 @@
+openapi: 3.1.0
+info:
+  title: TruthGraph Investigation API
+  version: 2.2.0
+  description: Question-first evidence investigations and reviewed knowledge imports. Live investigations and consent-gated direct-upload AI require a judge code; shared writes require a separate management code. Private preview stays in the browser. Direct-upload AI is distinct from Sanity MCP retrieval and never builds or publishes a Knowledge Base.
+paths:
+  /api/investigate:
+    post:
+      operationId: investigateQuestion
+      summary: Investigate which source-backed claims apply to a question
+      security:
+        - JudgeCode: []
+        - {}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [question, knowledgeBaseId]
+              properties:
+                question: { type: string, minLength: 5, maxLength: 2000 }
+                knowledgeBaseId: { type: string, maxLength: 120, description: Configured tgKnowledgeBase document ID; not an arbitrary MCP endpoint or platform ID. }
+                asOf: { type: string, format: date, description: Optional explicit date; overrides a date inferred from the question. }
+      responses:
+        '200':
+          description: Grounded investigation. Runtime response validation and full content contracts are defined in src/lib/knowledge.ts. A 200 can contain an honest conflict, clarification, or insufficient-evidence result.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [mode, question, knowledgeBase, intent, asOf, status, answer, statements, confidence, confidenceReason, reasoningSummary, evidence, conflicts, sources, followUp, trace, elapsedMs]
+                properties:
+                  mode: { type: string, enum: [sample, live, upload], description: sample is local retrieval; live is Sanity MCP; upload is direct model selection from supplied records. }
+                  question: { type: string }
+                  knowledgeBase: { type: object }
+                  intent: { type: object }
+                  asOf: { type: string, format: date }
+                  status: { type: string, enum: [answered, conflict, needs-context, insufficient] }
+                  answer: { type: string }
+                  statements:
+                    type: array
+                    items:
+                      type: object
+                      required: [text, claimIds]
+                      properties:
+                        text: { type: string, description: Canonical text of a cited applicable claim. }
+                        claimIds: { type: array, minItems: 1, items: { type: string } }
+                  confidence: { type: string, enum: [high, medium, low, insufficient], description: Explained evidence strength, not a probability of truth. }
+                  confidenceReason: { type: string }
+                  reasoningSummary: { type: string }
+                  evidence: { type: array, items: { type: object } }
+                  conflicts: { type: array, items: { type: object } }
+                  sources: { type: array, items: { type: object } }
+                  followUp: { type: array, items: { type: string } }
+                  trace: { type: array, items: { type: object } }
+                  elapsedMs: { type: number }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Problem' }
+        '403': { $ref: '#/components/responses/Problem' }
+        '413': { $ref: '#/components/responses/Problem' }
+        '415': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+        '502': { $ref: '#/components/responses/Problem' }
+        '503': { $ref: '#/components/responses/Problem' }
+  /api/investigate-upload:
+    post:
+      operationId: investigateUploadedEvidence
+      summary: Analyze provided records immediately with explicit model-processing consent
+      description: Live app mode only. Requires the judge access code and consent=true. Validates the prepared corpus and original-text fingerprints before sending its claim catalog and question to a tool-free model call. No URL fetching, shared content write, or Sanity MCP call occurs. At most 1 MiB JSON, 30 seconds, 2500 output tokens, no retries, and 10 authorized requests per minute per process. Only unique existing claim IDs are accepted; factual answers are composed from supplied statements. Self-declared authority is not independent verification. Provider failure never substitutes local sample data.
+      security:
+        - JudgeCode: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [prepared, request, consent]
+              properties:
+                consent: { type: boolean, const: true }
+                request:
+                  type: object
+                  required: [knowledgeBaseId, question]
+                  properties:
+                    knowledgeBaseId: { $ref: '#/components/schemas/Identifier', description: Must equal the one corpus ID in prepared.catalog. }
+                    question: { type: string, minLength: 5, maxLength: 2000 }
+                    asOf: { type: string, format: date }
+                prepared:
+                  type: object
+                  required: [catalog, uploads]
+                  properties:
+                    catalog:
+                      type: object
+                      required: [knowledgeBases, sources, claims]
+                      properties:
+                        knowledgeBases: { type: array, minItems: 1, maxItems: 1, items: { $ref: '#/components/schemas/KnowledgeBase' } }
+                        sources: { type: array, minItems: 1, maxItems: 20, items: { $ref: '#/components/schemas/KnowledgeSource' } }
+                        claims: { type: array, minItems: 1, maxItems: 100, items: { $ref: '#/components/schemas/Claim' } }
+                    uploads: { $ref: '#/components/schemas/PreparedImport/properties/uploads' }
+      responses:
+        '200':
+          description: Direct-upload investigation with mode=upload. May be answered, conflict, needs-context, or insufficient. No external source authenticity or Sanity indexing claim is made.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/paths/~1api~1investigate/post/responses/200/content/application~1json/schema'
+                  - type: object
+                    properties:
+                      mode: { type: string, const: upload }
+                      confidence: { type: string, enum: [medium, low, insufficient] }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Problem' }
+        '403': { $ref: '#/components/responses/Problem' }
+        '409': { $ref: '#/components/responses/Problem' }
+        '413': { $ref: '#/components/responses/Problem' }
+        '415': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+        '502': { $ref: '#/components/responses/Problem' }
+        '503': { $ref: '#/components/responses/Problem' }
+  /api/evidence:
+    get:
+      operationId: inspectEvidence
+      summary: Inspect canonical records in one configured knowledge base
+      security:
+        - JudgeCode: []
+        - {}
+      parameters:
+        - in: query
+          name: knowledgeBaseId
+          required: true
+          schema: { type: string, maxLength: 120 }
+      responses:
+        '200':
+          description: Sources and claims for the selected knowledge base; protected by the access code in live mode.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [knowledgeBase, sources, claims]
+                properties:
+                  knowledgeBase: { type: object }
+                  sources: { type: array, items: { type: object } }
+                  claims: { type: array, items: { type: object } }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Problem' }
+        '403': { $ref: '#/components/responses/Problem' }
+        '503': { $ref: '#/components/responses/Problem' }
+  /api/knowledge-bases:
+    get:
+      operationId: listKnowledgeBases
+      summary: Refresh public corpus metadata
+      description: Returns titles, descriptions, classification, suggestions, and mappings only. Do not place confidential information in these public fields. No source text or claims are returned.
+      security: []
+      responses:
+        '200':
+          description: Current canonical catalog metadata, not cached.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [knowledgeBases]
+                properties:
+                  knowledgeBases:
+                    type: array
+                    maxItems: 20
+                    items: { $ref: '#/components/schemas/KnowledgeBase' }
+        '503': { $ref: '#/components/responses/Problem' }
+    post:
+      operationId: importKnowledgeBase
+      summary: Store a reviewed corpus without replacing existing records
+      description: Live mode only. Maximum JSON body 1 MiB and 10 authorized requests per minute per process; 30-second deadline. Creates all records atomically, requires tg-upload- IDs and a null MCP mapping, and rechecks uploaded-text fingerprints. Duplicate IDs or catalog-capacity conflicts return 409. An uncertain upstream result returns 502; refresh the list before retrying the same IDs. This endpoint does not create or build a Sanity Knowledge Base.
+      security:
+        - KnowledgeManagementCode: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/PreparedImport' }
+      responses:
+        '201':
+          description: Canonical records stored; Knowledge Base indexing is still required.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [knowledgeBase, state, records]
+                properties:
+                  knowledgeBase: { $ref: '#/components/schemas/KnowledgeBase' }
+                  state: { type: string, const: awaiting-index }
+                  records: { type: integer, minimum: 3, maximum: 121 }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Problem' }
+        '403': { $ref: '#/components/responses/Problem' }
+        '409': { $ref: '#/components/responses/Problem' }
+        '413': { $ref: '#/components/responses/Problem' }
+        '415': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+        '502': { $ref: '#/components/responses/Problem' }
+        '503': { $ref: '#/components/responses/Problem' }
+  /api/knowledge-bases/{id}:
+    patch:
+      operationId: verifyKnowledgeBaseMapping
+      summary: Verify an MCP outline and save its Knowledge Base mapping
+      description: Live mode only. Accepts a platform kb... ID, never a caller-selected endpoint. Maximum body 8 KiB and 10 authorized requests per minute per process; 25-second deadline. Requires the current expected mapping and saves against the captured Sanity revision. Outline verification does not prove all claim text is indexed; run an investigation afterward. Does not build entries or delete records.
+      security:
+        - KnowledgeManagementCode: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { $ref: '#/components/schemas/Identifier' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [mcpId, expectedMcpId]
+              properties:
+                mcpId: { type: string, pattern: '^kb[a-zA-Z0-9_-]+$' }
+                expectedMcpId: { type: [string, 'null'], pattern: '^kb[a-zA-Z0-9_-]+$' }
+      responses:
+        '200':
+          description: The selected ID was present in the verified outline and the revision-guarded save succeeded.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [knowledgeBase, state]
+                properties:
+                  knowledgeBase: { $ref: '#/components/schemas/KnowledgeBase' }
+                  state: { type: string, const: outline-verified }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Problem' }
+        '403': { $ref: '#/components/responses/Problem' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '409': { $ref: '#/components/responses/Problem' }
+        '413': { $ref: '#/components/responses/Problem' }
+        '415': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+        '502': { $ref: '#/components/responses/Problem' }
+        '503': { $ref: '#/components/responses/Problem' }
+components:
+  securitySchemes:
+    JudgeCode:
+      type: apiKey
+      in: header
+      name: x-judge-code
+      description: Required in live mode. App-only code, never an API token.
+    KnowledgeManagementCode:
+      type: apiKey
+      in: header
+      name: x-knowledge-admin-code
+      description: Separate private code of at least 24 characters. Must differ from LIVE_ACCESS_CODE. Requires server-side Sanity project write access; never send provider tokens from the browser.
+  schemas:
+    Identifier:
+      type: string
+      pattern: '^[a-zA-Z0-9][a-zA-Z0-9._-]*$'
+      maxLength: 120
+    KnowledgeBase:
+      type: object
+      required: [_id, title, description, kind, mcpId, suggestedQuestions]
+      properties:
+        _id: { $ref: '#/components/schemas/Identifier' }
+        title: { type: string, minLength: 1, maxLength: 120 }
+        description: { type: string, minLength: 1, maxLength: 600 }
+        kind: { type: string, enum: [real, synthetic] }
+        mcpId: { type: [string, 'null'], pattern: '^kb[a-zA-Z0-9_-]+$' }
+        suggestedQuestions: { type: array, maxItems: 8, items: { type: string, minLength: 5, maxLength: 500 } }
+    KnowledgeSource:
+      type: object
+      required: [_id, knowledgeBaseId, title, publisher, url, authority, publishedAt, reviewedAt]
+      properties:
+        _id: { $ref: '#/components/schemas/Identifier' }
+        knowledgeBaseId: { $ref: '#/components/schemas/Identifier' }
+        title: { type: string, minLength: 1, maxLength: 200 }
+        publisher: { type: string, minLength: 1, maxLength: 120 }
+        url: { type: string, maxLength: 2048, description: Credential-free HTTPS URL or urn:sha256 followed by a colon and 64 lowercase hexadecimal characters. Upload identifiers hash the decoded UTF-8 text and are not web links. }
+        fileName: { type: string, maxLength: 180 }
+        authority: { type: string, enum: [primary, secondary, unverified] }
+        publishedAt: { type: [string, 'null'], format: date }
+        reviewedAt: { type: string, format: date }
+    Claim:
+      type: object
+      required: [_id, knowledgeBaseId, sourceId, subject, predicate, value, statement, aliases, exclusive, version, effectiveFrom, effectiveUntil, conditions, relations]
+      properties:
+        _id: { $ref: '#/components/schemas/Identifier' }
+        knowledgeBaseId: { $ref: '#/components/schemas/Identifier' }
+        sourceId: { $ref: '#/components/schemas/Identifier' }
+        subject: { type: string, minLength: 1, maxLength: 120 }
+        predicate: { type: string, minLength: 1, maxLength: 120 }
+        value: { type: string, minLength: 1, maxLength: 200 }
+        statement: { type: string, minLength: 10, maxLength: 1800 }
+        aliases: { type: array, maxItems: 20, items: { type: string, minLength: 1, maxLength: 80 } }
+        exclusive: { type: boolean }
+        version:
+          anyOf:
+            - type: 'null'
+            - type: object
+              required: [subject, range]
+              properties:
+                subject: { type: string, minLength: 1, maxLength: 120 }
+                aliases: { type: array, maxItems: 6, items: { type: string, minLength: 1, maxLength: 80 } }
+                range: { type: string, maxLength: 120, description: Valid node-semver range. }
+        effectiveFrom: { type: [string, 'null'], format: date }
+        effectiveUntil: { type: [string, 'null'], format: date, description: Exclusive upper bound; must be after effectiveFrom when both are present. }
+        conditions:
+          type: array
+          maxItems: 10
+          items:
+            type: object
+            required: [key, value]
+            properties:
+              key: { type: string, minLength: 1, maxLength: 80 }
+              value: { type: string, minLength: 1, maxLength: 120 }
+        relations:
+          type: array
+          maxItems: 15
+          items:
+            type: object
+            required: [kind, targetId, reason]
+            properties:
+              kind: { type: string, enum: [supersedes, corrects, supports, related] }
+              targetId: { $ref: '#/components/schemas/Identifier' }
+              reason: { type: string, minLength: 10, maxLength: 600 }
+    PreparedImport:
+      type: object
+      required: [catalog, uploads]
+      description: All record IDs must be unique and begin tg-upload-. References must remain inside this corpus. Runtime schemas additionally verify dates, semantic versions, reference integrity, exact excerpts, and source fingerprints.
+      properties:
+        catalog:
+          type: object
+          required: [knowledgeBases, sources, claims]
+          properties:
+            knowledgeBases:
+              type: array
+              minItems: 1
+              maxItems: 1
+              items:
+                allOf:
+                  - { $ref: '#/components/schemas/KnowledgeBase' }
+                  - type: object
+                    properties:
+                      kind: { const: real }
+                      mcpId: { type: 'null' }
+            sources: { type: array, minItems: 1, maxItems: 20, items: { $ref: '#/components/schemas/KnowledgeSource' } }
+            claims: { type: array, minItems: 1, maxItems: 100, items: { $ref: '#/components/schemas/Claim' } }
+        uploads:
+          type: array
+          maxItems: 8
+          description: Original text for each URN source. Unique sourceId values; aggregate UTF-8 text limited to 256 KiB. Every uploaded excerpt must occur verbatim in the source. HTTPS-backed authored claims need no file entry.
+          items:
+            type: object
+            required: [sourceId, name, text]
+            properties:
+              sourceId: { $ref: '#/components/schemas/Identifier' }
+              name: { type: string, maxLength: 180, description: Must match the corresponding source filename. }
+              text: { type: string, maxLength: 262144 }
+  responses:
+    Problem:
+      description: Validation, authorization, budget, configuration, or upstream failure. No silent demo fallback.
+      content:
+        application/problem+json:
+          schema:
+            type: object
+            required: [type, title, status, code]
+            properties:
+              type: { type: string }
+              title: { type: string }
+              status: { type: integer }
+              code: { type: string }

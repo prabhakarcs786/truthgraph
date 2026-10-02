@@ -1,0 +1,34 @@
+{
+  "knowledgeBases": [
+    {
+      "_id": "py-lifecycle",
+      "title": "Python release lifecycle",
+      "description": "Original summaries of the Python Developer's Guide version status page and PEP 373. Claims are version-scoped and include one recorded correction (the Python 2.7 sunset date).",
+      "kind": "real",
+      "mcpId": null,
+      "suggestedQuestions": [
+        "What is the end-of-life date for Python 2.7?",
+        "How long is the bugfix phase for Python 3.12?",
+        "How long is the bugfix phase for Python 3.14?",
+        "Is Python 3.9 still supported?",
+        "What is the support status of Python 3.13?"
+      ],
+      "showcase": []
+    }
+  ],
+  "sources": [
+    { "_id": "py-source-devguide", "knowledgeBaseId": "py-lifecycle", "title": "Status of Python versions", "publisher": "Python Developer's Guide", "url": "https://devguide.python.org/versions/", "authority": "primary", "publishedAt": null, "reviewedAt": "2026-10-01" },
+    { "_id": "py-source-pep373", "knowledgeBaseId": "py-lifecycle", "title": "PEP 373 - Python 2.7 Release Schedule", "publisher": "Python Software Foundation", "url": "https://peps.python.org/pep-0373/", "authority": "primary", "publishedAt": null, "reviewedAt": "2026-10-01" }
+  ],
+  "claims": [
+    { "_id": "py-claim-27-eol-original", "knowledgeBaseId": "py-lifecycle", "sourceId": "py-source-pep373", "subject": "Python", "predicate": "end-of-life date", "value": "2015", "statement": "Before April 2014, the Python 2.7 End Of Life (sunset) date was 2015.", "aliases": ["end of life", "eol", "sunset"], "exclusive": true, "version": { "subject": "Python", "aliases": ["Python"], "range": ">=2.7.0 <2.8.0" }, "effectiveFrom": null, "effectiveUntil": null, "conditions": [], "relations": [] },
+    { "_id": "py-claim-27-eol-extended", "knowledgeBaseId": "py-lifecycle", "sourceId": "py-source-pep373", "subject": "Python", "predicate": "end-of-life date", "value": "2020-01-01", "statement": "In April 2014 the Python 2.7 End Of Life date was moved five years into the future, to 2020; support officially stopped on January 1, 2020.", "aliases": ["end of life", "eol", "sunset"], "exclusive": true, "version": { "subject": "Python", "aliases": ["Python"], "range": ">=2.7.0 <2.8.0" }, "effectiveFrom": null, "effectiveUntil": null, "conditions": [], "relations": [{ "kind": "corrects", "targetId": "py-claim-27-eol-original", "reason": "The April 2014 update to PEP 373 moved the End Of Life date five years later, to 2020." }] },
+    { "_id": "py-claim-39-eol", "knowledgeBaseId": "py-lifecycle", "sourceId": "py-source-devguide", "subject": "Python", "predicate": "support status", "value": "end-of-life", "statement": "Python 3.9 reached end-of-life on October 31, 2025.", "aliases": ["support", "supported", "status"], "exclusive": true, "version": { "subject": "Python", "aliases": ["Python"], "range": ">=3.9.0 <3.10.0" }, "effectiveFrom": "2025-10-31", "effectiveUntil": null, "conditions": [], "relations": [] },
+    { "_id": "py-claim-310-security", "knowledgeBaseId": "py-lifecycle", "sourceId": "py-source-devguide", "subject": "Python", "predicate": "support status", "value": "security fixes only", "statement": "Python 3.10 is in the security phase, accepting only security fixes, and is scheduled to reach end-of-life in October 2026.", "aliases": ["support", "supported", "status", "security"], "exclusive": true, "version": { "subject": "Python", "aliases": ["Python"], "range": ">=3.10.0 <3.11.0" }, "effectiveFrom": null, "effectiveUntil": null, "conditions": [], "relations": [] },
+    { "_id": "py-claim-312-security", "knowledgeBaseId": "py-lifecycle", "sourceId": "py-source-devguide", "subject": "Python", "predicate": "support status", "value": "security fixes only", "statement": "Python 3.12 is in the security phase, accepting only security fixes, and is scheduled to reach end-of-life in October 2028.", "aliases": ["support", "supported", "status", "security"], "exclusive": true, "version": { "subject": "Python", "aliases": ["Python"], "range": ">=3.12.0 <3.13.0" }, "effectiveFrom": null, "effectiveUntil": null, "conditions": [], "relations": [] },
+    { "_id": "py-claim-313-bugfix", "knowledgeBaseId": "py-lifecycle", "sourceId": "py-source-devguide", "subject": "Python", "predicate": "support status", "value": "bugfix", "statement": "Python 3.13, first released on October 7, 2024, is in the bugfix phase and is scheduled to reach end-of-life in October 2029.", "aliases": ["support", "supported", "status", "bugfix"], "exclusive": true, "version": { "subject": "Python", "aliases": ["Python"], "range": ">=3.13.0 <3.14.0" }, "effectiveFrom": null, "effectiveUntil": null, "conditions": [], "relations": [] },
+    { "_id": "py-claim-bugfix-before-313", "knowledgeBaseId": "py-lifecycle", "sourceId": "py-source-devguide", "subject": "Python", "predicate": "bugfix phase length", "value": "18 months", "statement": "For Python versions before 3.13, the bugfix phase lasts 18 months; after that only security fixes are accepted.", "aliases": ["bugfix phase", "bugfix", "binaries"], "exclusive": true, "version": { "subject": "Python", "aliases": ["Python"], "range": "<3.13.0" }, "effectiveFrom": null, "effectiveUntil": null, "conditions": [], "relations": [] },
+    { "_id": "py-claim-bugfix-from-313", "knowledgeBaseId": "py-lifecycle", "sourceId": "py-source-devguide", "subject": "Python", "predicate": "bugfix phase length", "value": "2 years", "statement": "From Python 3.13, the bugfix phase lasts two years; after that only security fixes are accepted and no more binaries are released.", "aliases": ["bugfix phase", "bugfix", "binaries"], "exclusive": true, "version": { "subject": "Python", "aliases": ["Python"], "range": ">=3.13.0" }, "effectiveFrom": null, "effectiveUntil": null, "conditions": [], "relations": [] },
+    { "_id": "py-claim-support-length", "knowledgeBaseId": "py-lifecycle", "sourceId": "py-source-devguide", "subject": "Python", "predicate": "total support length", "value": "5 years", "statement": "Python support ends five years after a release; the release cycle is then frozen and no further changes are allowed.", "aliases": ["support length", "five years", "how long"], "exclusive": true, "version": null, "effectiveFrom": null, "effectiveUntil": null, "conditions": [], "relations": [] }
+  ]
+}

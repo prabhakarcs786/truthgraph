@@ -1,0 +1,904 @@
+{
+  "knowledgeBases": [
+    {
+      "_id": "tg-kb-football-laws",
+      "title": "Football rules desk",
+      "description": "Original summaries of the IFAB Laws of the Game for eleven-a-side football (not futsal or beach soccer) and IFAB decisions. Each rule records the season it took effect, the rule it replaced, and the kind of match or competition it applies to, so the answer matches the match you are asking about.",
+      "kind": "real",
+      "mcpId": null,
+      "suggestedQuestions": [
+        "What happens if a goalkeeper holds the ball too long?",
+        "How many substitutes can be used in an international friendly?",
+        "What happens if a throw-in takes too long?",
+        "What happens if a substituted player takes too long to leave the field?",
+        "Can a player be sent off for walking off in protest at the World Cup 2026?",
+        "What colour must the referee wear?"
+      ],
+      "showcase": [
+        {
+          "title": "Rule replaced",
+          "question": "What happens if a goalkeeper holds the ball too long?",
+          "asOf": null,
+          "lesson": "Since 1 July 2025 the limit is eight seconds and the penalty is a corner kick. A keyword search can still surface the old six-second indirect free kick; TruthGraph follows the recorded replacement."
+        },
+        {
+          "title": "Match date matters",
+          "question": "What happens if a goalkeeper holds the ball too long?",
+          "asOf": "2025-03-01",
+          "lesson": "Same question, match played on 1 March 2025: the old Law applied, so more than six seconds meant an indirect free kick. The match date decides the answer, not the newest document."
+        },
+        {
+          "title": "Depends on the match",
+          "question": "How many substitutes can a team use?",
+          "asOf": null,
+          "lesson": "Competition matches, international friendlies, and club friendlies have different limits. TruthGraph asks which kind of match instead of picking one. Add \"in an international friendly\" to get the answer."
+        },
+        {
+          "title": "Competition option",
+          "question": "Can a player get a red card for covering their mouth?",
+          "asOf": null,
+          "lesson": "In April 2026 the IFAB made this a competition option, adopted for the FIFA World Cup 2026. Answering yes for every match would be wrong, so TruthGraph asks which competition."
+        },
+        {
+          "title": "Brand-new Law",
+          "question": "A defender denies a clear goal chance, the referee plays advantage and the goal is scored. Is the defender booked?",
+          "asOf": null,
+          "lesson": "From 1 July 2026 there is no caution when the advantage leads to a goal. Last season's rule still booked the defender, so an older summary gives the wrong answer."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "_id": "tg-source-fb-ifab-2025",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "The IFAB tackles time-wasting by goalkeepers",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/news/the-ifab-tackles-goalkeeper-time-wasting/",
+      "authority": "primary",
+      "publishedAt": "2025-03-01",
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-ifab-2026-agm",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "The IFAB introduces further measures to improve match flow and player behaviour",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/news/the-ifab-introduces-further-measures-to-improve-match-flow-and-player-behaviour/",
+      "authority": "primary",
+      "publishedAt": "2026-02-28",
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-ifab-2026-special",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "The IFAB unanimously approves red card for players covering their mouths to conceal discriminatory behaviour",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/news/the-ifab-unanimously-approves-red-card-for-players-covering-their-mouths-to-conce/",
+      "authority": "primary",
+      "publishedAt": "2026-04-29",
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-law3",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "Laws of the Game 2026/27 – Law 3: The Players",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/laws/latest/the-players/",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-law12",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "Laws of the Game 2026/27 – Law 12: Fouls and Misconduct",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/laws/latest/fouls-and-misconduct/",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-law7",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "Laws of the Game 2026/27 – Law 7: The Duration of the Match",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/laws/latest/the-duration-of-the-match/",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-law11",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "Laws of the Game 2026/27 – Law 11: Offside",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/laws/latest/offside/",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-law1",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "Laws of the Game – Law 1: The Field of Play",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/laws/latest/the-field-of-play/",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-law8",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "Laws of the Game – Law 8: The Start and Restart of Play",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/laws/latest/the-start-and-restart-of-play/",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-law10",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "Laws of the Game – Law 10: Determining the Outcome of a Match",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-law13",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "Laws of the Game – Law 13: Free Kicks",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/laws/latest/free-kicks/",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-law14",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "Laws of the Game – Law 14: The Penalty Kick",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/laws/latest/the-penalty-kick/",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-fb-law15",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "title": "Laws of the Game – Law 15: The Throw-in",
+      "publisher": "The International Football Association Board (IFAB)",
+      "url": "https://www.theifab.com/laws/latest/the-throw-in/",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    }
+  ],
+  "claims": [
+    {
+      "_id": "tg-claim-fb-keeper-six",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-ifab-2025",
+      "subject": "Laws of the Game",
+      "predicate": "goalkeeper holding the ball too long",
+      "value": "indirect free kick after more than six seconds",
+      "statement": "Under the Laws of the Game in force before 1 July 2025, a goalkeeper who held the ball in the hands for more than six seconds was penalised with an indirect free kick to the opponents.",
+      "aliases": [
+        "goalkeeper",
+        "keeper",
+        "goalie",
+        "holds the ball",
+        "holding the ball",
+        "hold the ball",
+        "too long",
+        "six seconds",
+        "eight seconds",
+        "time-wasting"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": "2025-07-01",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-keeper-eight",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-ifab-2025",
+      "subject": "Laws of the Game",
+      "predicate": "goalkeeper holding the ball too long",
+      "value": "corner kick after more than eight seconds",
+      "statement": "Since the 2025/26 Laws of the Game took effect on 1 July 2025, a goalkeeper who controls the ball with the hands inside the penalty area for more than eight seconds concedes a corner kick. The referee counts down the last five seconds with a raised hand. Competitions that started before 1 July 2025, such as the FIFA Club World Cup from 14 June 2025, could apply it earlier.",
+      "aliases": [
+        "goalkeeper",
+        "keeper",
+        "goalie",
+        "holds the ball",
+        "holding the ball",
+        "hold the ball",
+        "too long",
+        "six seconds",
+        "eight seconds",
+        "time-wasting"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2025-07-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-fb-keeper-six",
+          "reason": "The IFAB amended Law 12 for 2025/26, replacing the six-second indirect free kick with an eight-second limit sanctioned by a corner kick."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-fb-throw-in-countdown",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-ifab-2026-agm",
+      "subject": "Laws of the Game",
+      "predicate": "delayed throw-in",
+      "value": "throw-in given to the opponents after a five-second countdown",
+      "statement": "Under the 2026/27 Laws of the Game (in force 1 July 2026 and approved in February 2026 for the FIFA World Cup 2026), if the referee considers a throw-in is taking too long or being deliberately delayed, a visible five-second countdown starts; if the ball is not in play when it ends, the throw-in goes to the opposing team.",
+      "aliases": [
+        "throw-in",
+        "throw in",
+        "delayed throw-in",
+        "takes too long",
+        "countdown"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2026-07-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-goal-kick-countdown",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-ifab-2026-agm",
+      "subject": "Laws of the Game",
+      "predicate": "delayed goal kick",
+      "value": "corner kick to the opponents after a five-second countdown",
+      "statement": "Under the 2026/27 Laws of the Game (in force 1 July 2026), a goal kick that the referee considers too slow or deliberately delayed triggers a five-second visual countdown; if the ball is not in play when it ends, the opponents are awarded a corner kick.",
+      "aliases": [
+        "goal kick",
+        "goal-kick",
+        "delayed goal kick",
+        "countdown"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2026-07-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-substitution-ten-seconds",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law3",
+      "subject": "Laws of the Game",
+      "predicate": "substituted player slow to leave the field",
+      "value": "the substitute waits until the first stoppage after one minute",
+      "statement": "Under the 2026/27 Laws of the Game (in force 1 July 2026), a player being substituted must be off the field within ten seconds of the substitution board, or the referee's signal. If not, the player must still leave, but the substitute may only enter at the first stoppage after one minute of play has passed since the restart.",
+      "aliases": [
+        "substitution",
+        "substituted",
+        "substituted player",
+        "leave the field",
+        "ten seconds",
+        "substitution board"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2026-07-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-subs-competition",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law3",
+      "subject": "Laws of the Game",
+      "predicate": "maximum substitutes a team may use",
+      "value": "up to five, as set by the competition",
+      "statement": "In official competition matches, FIFA, the confederation, or the national association sets how many substitutes may be used, up to five. Where five are allowed for top-division club or senior international teams, each team has at most three substitution opportunities, plus half-time.",
+      "aliases": [
+        "substitutes",
+        "subs",
+        "substitutions",
+        "how many substitutes",
+        "replacements"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "match type",
+          "value": "competition match"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-subs-international-friendly",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law3",
+      "subject": "Laws of the Game",
+      "predicate": "maximum substitutes a team may use",
+      "value": "eight, or up to eleven if both teams agree",
+      "statement": "Since the 2026/27 Laws of the Game (1 July 2026), senior 'A' international friendlies allow up to fifteen named substitutes, of whom eight may be used; if both teams agree and tell the referee before the match, up to eleven may be used.",
+      "aliases": [
+        "substitutes",
+        "subs",
+        "substitutions",
+        "how many substitutes",
+        "replacements"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2026-07-01",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "match type",
+          "value": "international friendly"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-subs-club-friendly",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law3",
+      "subject": "Laws of the Game",
+      "predicate": "maximum substitutes a team may use",
+      "value": "an agreed number, otherwise six",
+      "statement": "In other matches, such as club friendlies, teams may use more substitutes if they agree a maximum and inform the referee before the match; without that agreement each team may use at most six.",
+      "aliases": [
+        "substitutes",
+        "subs",
+        "substitutions",
+        "how many substitutes",
+        "replacements"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "match type",
+          "value": "club friendly"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-mouth-cover",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-ifab-2026-special",
+      "subject": "Laws of the Game",
+      "predicate": "covering the mouth when confronting an opponent",
+      "value": "red card",
+      "statement": "At the FIFA World Cup 2026, a player who covers their mouth in a confrontation with an opponent may be sent off with a red card. The IFAB approved this on 29 April 2026 as a competition option, so it applies only where the competition organiser adopts it.",
+      "aliases": [
+        "covering their mouth",
+        "covering the mouth",
+        "covers their mouth",
+        "cover their mouth",
+        "mouth"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2026-04-29",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "competition",
+          "value": "World Cup 2026"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-protest-walk-off",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-ifab-2026-special",
+      "subject": "Laws of the Game",
+      "predicate": "leaving the field in protest",
+      "value": "red card, and the team that causes an abandonment in principle forfeits",
+      "statement": "At the FIFA World Cup 2026, the referee may send off a player who leaves the field in protest at a decision, and any team official who incites it; a team that causes the match to be abandoned in principle forfeits. The IFAB approved this on 29 April 2026 as a competition option.",
+      "aliases": [
+        "walking off",
+        "walk off",
+        "walk-off",
+        "protest",
+        "leaves the field in protest",
+        "leave the field in protest"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2026-04-29",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "competition",
+          "value": "World Cup 2026"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-dogso-advantage-old",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-ifab-2026-agm",
+      "subject": "Laws of the Game",
+      "predicate": "caution after advantage when a goal chance was denied",
+      "value": "cautioned even if a goal was scored",
+      "statement": "Before the 2026/27 Laws of the Game, when the referee played advantage after an offence that denied an obvious goal-scoring opportunity, the offender was still cautioned at the next stoppage, even if the attacking team scored.",
+      "aliases": [
+        "advantage",
+        "clear goal chance",
+        "obvious goal-scoring opportunity",
+        "goal-scoring opportunity",
+        "booked",
+        "yellow card",
+        "cautioned",
+        "dogso"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": "2026-07-01",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-dogso-advantage-new",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law12",
+      "subject": "Laws of the Game",
+      "predicate": "caution after advantage when a goal chance was denied",
+      "value": "no caution if the goal is scored",
+      "statement": "Since the 2026/27 Laws of the Game (1 July 2026), if the referee plays advantage after an offence that denied an obvious goal-scoring opportunity and the attacking team scores as a result, the offender receives no caution, because the offence did not prevent a goal.",
+      "aliases": [
+        "advantage",
+        "clear goal chance",
+        "obvious goal-scoring opportunity",
+        "goal-scoring opportunity",
+        "booked",
+        "yellow card",
+        "cautioned",
+        "dogso"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2026-07-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-fb-dogso-advantage-old",
+          "reason": "The IFAB's 2026/27 amendment to Law 12 removed the caution when advantage results in a goal."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-fb-players",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law3",
+      "subject": "Laws of the Game",
+      "predicate": "number of players per team",
+      "value": "up to eleven, at least seven",
+      "statement": "A match is played by two teams of at most eleven players each, one of whom must be the goalkeeper. A match may not start or continue if either team has fewer than seven players.",
+      "aliases": [
+        "how many players",
+        "players",
+        "eleven",
+        "team size",
+        "fewer than seven",
+        "minimum players"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-offside",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law11",
+      "subject": "Laws of the Game",
+      "predicate": "offside",
+      "value": "penalised only when involved in active play from an offside position",
+      "statement": "Being in an offside position is not itself an offence. A player is in an offside position when any part of the head, body, or feet is in the opponents' half and nearer to the opponents' goal line than both the ball and the second-last opponent; hands and arms do not count, and being level is onside. The player is penalised, with an indirect free kick, only on becoming involved in active play when a team-mate plays or touches the ball.",
+      "aliases": [
+        "offside",
+        "off side",
+        "offside position",
+        "second-last opponent",
+        "onside"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-offside-restarts",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law11",
+      "subject": "Laws of the Game",
+      "predicate": "offside from a goal kick, throw-in, or corner kick",
+      "value": "no offside offence",
+      "statement": "There is no offside offence if a player receives the ball directly from a goal kick, a throw-in, or a corner kick.",
+      "aliases": [
+        "offside",
+        "throw-in",
+        "throw in",
+        "corner kick",
+        "goal kick",
+        "directly from"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-duration",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law7",
+      "subject": "Laws of the Game",
+      "predicate": "length of a match",
+      "value": "two halves of 45 minutes",
+      "statement": "A match lasts two equal halves of 45 minutes, which may be shortened only if the referee and both teams agree before kick-off and competition rules allow it. The half-time interval may not exceed 15 minutes, and the referee adds time in each half for time lost.",
+      "aliases": [
+        "how long",
+        "duration",
+        "90 minutes",
+        "45 minutes",
+        "half-time",
+        "halftime",
+        "length of a match",
+        "added time",
+        "stoppage time"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-second-yellow",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law12",
+      "subject": "Laws of the Game",
+      "predicate": "second yellow card in a match",
+      "value": "sent off",
+      "statement": "A player, substitute, or substituted player who receives a second caution (yellow card) in the same match is sent off and shown a red card.",
+      "aliases": [
+        "second yellow",
+        "two yellow cards",
+        "2 yellow cards",
+        "second caution",
+        "sent off"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-goal-size",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law1",
+      "subject": "Laws of the Game",
+      "predicate": "size of the goal",
+      "value": "7.32 m wide, 2.44 m high",
+      "statement": "The goal is 7.32 m (8 yards) wide between the inside of the posts, and the lower edge of the crossbar is 2.44 m (8 feet) above the ground.",
+      "aliases": [
+        "goal size",
+        "size of the goal",
+        "how big is the goal",
+        "how wide is the goal",
+        "crossbar",
+        "goalposts"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-field-size",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law1",
+      "subject": "Laws of the Game",
+      "predicate": "size of the pitch",
+      "value": "90-120 m long, 45-90 m wide",
+      "statement": "The touchline must be 90-120 m long and the goal line 45-90 m, with the touchline longer than the goal line. International matches use tighter limits: 100-110 m by 64-75 m.",
+      "aliases": [
+        "pitch size",
+        "field size",
+        "size of the pitch",
+        "how big is the pitch",
+        "how long is the pitch",
+        "dimensions"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-kick-off-goal",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law8",
+      "subject": "Laws of the Game",
+      "predicate": "scoring directly from a kick-off",
+      "value": "allowed against the opponents",
+      "statement": "A goal may be scored directly against the opponents from the kick-off; if the ball goes straight into the kicker's own goal, the opponents get a corner kick.",
+      "aliases": [
+        "kick-off",
+        "kick off",
+        "kickoff",
+        "score from the kick-off"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-dropped-ball",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-ifab-2025",
+      "subject": "Laws of the Game",
+      "predicate": "who gets a dropped ball",
+      "value": "the team that had or would have gained possession",
+      "statement": "Since the 2025/26 Laws of the Game (1 July 2025), when play is stopped with the ball outside the penalty area, the ball is dropped for the team that had or would have gained possession if that is clear to the referee; otherwise it goes to the team that last touched it.",
+      "aliases": [
+        "dropped ball",
+        "drop ball",
+        "drop-ball",
+        "restart after injury"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2025-07-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-goal-scored",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law10",
+      "subject": "Laws of the Game",
+      "predicate": "when a goal counts",
+      "value": "the whole ball crosses the goal line",
+      "statement": "A goal is scored only when the whole of the ball passes over the goal line between the posts and under the crossbar, provided the scoring team has committed no offence.",
+      "aliases": [
+        "whole ball",
+        "goal line",
+        "is it a goal",
+        "crossed the line",
+        "goal counts"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-drawn-match",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law10",
+      "subject": "Laws of the Game",
+      "predicate": "deciding a drawn match",
+      "value": "away goals, extra time, or penalties",
+      "statement": "When competition rules require a winner after a draw, the only permitted methods are the away goals rule, two equal periods of extra time of no more than 15 minutes each, and a penalty shoot-out, alone or combined.",
+      "aliases": [
+        "draw",
+        "drawn",
+        "tie",
+        "extra time",
+        "penalty shoot-out",
+        "shootout",
+        "away goals"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-free-kick-distance",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law13",
+      "subject": "Laws of the Game",
+      "predicate": "distance of opponents at a free kick",
+      "value": "9.15 m (10 yards)",
+      "statement": "Until a free kick is in play, opponents must be at least 9.15 m (10 yards) from the ball, unless they stand on their own goal line between the posts.",
+      "aliases": [
+        "free kick",
+        "wall",
+        "9.15",
+        "10 yards",
+        "distance"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-free-kick-direct",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law13",
+      "subject": "Laws of the Game",
+      "predicate": "scoring directly from a free kick",
+      "value": "direct yes, indirect no",
+      "statement": "A direct free kick kicked straight into the opponents' goal is a goal. An indirect free kick that goes straight in is not a goal; play restarts with a goal kick.",
+      "aliases": [
+        "free kick",
+        "indirect free kick",
+        "direct free kick",
+        "score directly"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-penalty-procedure",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law14",
+      "subject": "Laws of the Game",
+      "predicate": "how a penalty kick is taken",
+      "value": "keeper on the goal line, ball kicked forward",
+      "statement": "At a penalty kick the defending goalkeeper must stay on the goal line between the posts, facing the kicker, until the ball is kicked. The kicker must kick the ball forward; a backheel is allowed if the ball moves forward.",
+      "aliases": [
+        "penalty",
+        "penalty kick",
+        "spot kick",
+        "goal line",
+        "backheel"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-penalty-keeper-offence",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law14",
+      "subject": "Laws of the Game",
+      "predicate": "goalkeeper offence at a penalty",
+      "value": "goal stands, or retake if the keeper stops it",
+      "statement": "If the goalkeeper commits an offence at a penalty kick and the ball still goes in, the goal stands; if the goalkeeper's action stops the ball going in, the kick is retaken.",
+      "aliases": [
+        "penalty",
+        "goalkeeper off the line",
+        "keeper off the line",
+        "retake",
+        "retaken"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-throw-in-technique",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law15",
+      "subject": "Laws of the Game",
+      "predicate": "how to take a throw-in",
+      "value": "both hands, from behind and over the head",
+      "statement": "The thrower must face the field, have part of each foot on or behind the touchline, and throw the ball with both hands from behind and over the head, from where the ball left the field.",
+      "aliases": [
+        "throw-in",
+        "throw in",
+        "foul throw",
+        "both hands"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-throw-in-goal",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law15",
+      "subject": "Laws of the Game",
+      "predicate": "scoring directly from a throw-in",
+      "value": "not allowed",
+      "statement": "A goal cannot be scored directly from a throw-in; if the ball goes straight into the opponents' goal, a goal kick is awarded.",
+      "aliases": [
+        "throw-in",
+        "throw in",
+        "score from a throw",
+        "score directly"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-fb-handball-scorer",
+      "knowledgeBaseId": "tg-kb-football-laws",
+      "sourceId": "tg-source-fb-law12",
+      "subject": "Laws of the Game",
+      "predicate": "goal after the ball touches the scorer's hand or arm",
+      "value": "not allowed, even if accidental",
+      "statement": "A goal does not count if the scorer scores directly from their hand or arm, or immediately after the ball has touched their hand or arm, even if the touch was accidental.",
+      "aliases": [
+        "handball",
+        "hand ball",
+        "hand",
+        "arm",
+        "accidental handball"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    }
+  ]
+}

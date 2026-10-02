@@ -1,0 +1,951 @@
+{
+  "knowledgeBases": [
+    {
+      "_id": "tg-kb-chess-laws",
+      "title": "Chess rules desk",
+      "description": "Original summaries of the FIDE Laws of Chess across the 2009, 2014, 2018, and 2023 editions. FIDE applies each edition to competitions that start in its window, and many rules differ between standard, rapid, and blitz games, so claims carry dates and time-control conditions.",
+      "kind": "real",
+      "mcpId": null,
+      "suggestedQuestions": [
+        "Can I keep my switched-off phone in my pocket during a game?",
+        "What happens after an illegal move in blitz?",
+        "How much extra time does the opponent get after an illegal move in rapid chess?",
+        "Is a game drawn automatically when the same position appears three times?",
+        "What is the touch-move rule?",
+        "How many points is a knight worth?"
+      ],
+      "showcase": [
+        {
+          "title": "Stricter today",
+          "question": "Can I keep my switched-off phone in my pocket during a game?",
+          "asOf": null,
+          "lesson": "Since 2017, any device not approved by the arbiter is forbidden in the playing venue, even when switched off; only event regulations can relax this. Many players still remember the older rule."
+        },
+        {
+          "title": "Older tournament",
+          "question": "Can I keep my switched-off phone in my pocket during a game?",
+          "asOf": "2012-05-01",
+          "lesson": "For a 2012 tournament, the 2009 Laws applied: a phone was allowed if completely switched off, and you lost only if it made a sound. The date picks the edition."
+        },
+        {
+          "title": "Depends on time control",
+          "question": "What happens after an illegal move?",
+          "asOf": null,
+          "lesson": "The penalty depends on whether the game is standard, rapid, or blitz, so TruthGraph asks. Add \"in blitz\" to resolve it."
+        },
+        {
+          "title": "Changed in 2023",
+          "question": "How much extra time does the opponent get after an illegal move in rapid chess?",
+          "asOf": null,
+          "lesson": "The 2023 Laws cut the rapid penalty from two minutes to one. A guide written for 2018 to 2022 events gives the old number."
+        },
+        {
+          "title": "Surprising change",
+          "question": "If I resign when my opponent cannot possibly checkmate me, who wins?",
+          "asOf": null,
+          "lesson": "Since 2023, such a resignation is a draw, not a loss. Keyword search finds \"resigns\" and returns the old rule that the opponent wins."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "_id": "tg-source-ch-laws-2023",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "title": "FIDE Laws of Chess, applied from 1 January 2023",
+      "publisher": "FIDE (International Chess Federation)",
+      "url": "https://handbook.fide.com/chapter/E012023",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ch-laws-2018",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "title": "FIDE Laws of Chess, for competitions from 1 January 2018 to 31 December 2022",
+      "publisher": "FIDE (International Chess Federation)",
+      "url": "https://handbook.fide.com/chapter/E012018",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ch-laws-2014",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "title": "FIDE Laws of Chess, for competitions from 1 July 2014 to 30 June 2017",
+      "publisher": "FIDE (International Chess Federation)",
+      "url": "https://handbook.fide.com/chapter/E012014",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ch-laws-2009",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "title": "FIDE Laws of Chess, in force from 1 July 2009",
+      "publisher": "FIDE (International Chess Federation)",
+      "url": "https://handbook.fide.com/chapter/E01pre2014",
+      "authority": "primary",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-01"
+    },
+    {
+      "_id": "tg-source-ch-news-2023",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "title": "2023 FIDE Laws of Chess published",
+      "publisher": "FIDE (International Chess Federation)",
+      "url": "https://www.fide.com/2023-fide-laws-of-chess-published/",
+      "authority": "primary",
+      "publishedAt": "2023-01-04",
+      "reviewedAt": "2026-10-01"
+    }
+  ],
+  "claims": [
+    {
+      "_id": "tg-claim-ch-illegal-standard-2009",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2009",
+      "subject": "Chess",
+      "predicate": "penalty for an illegal move",
+      "value": "loss on the third illegal move",
+      "statement": "Under the 2009 Laws of Chess, in standard games the opponent received two extra minutes for each of a player's first two illegal moves, and a third illegal move lost the game.",
+      "aliases": [
+        "illegal move",
+        "illegal moves",
+        "second illegal move",
+        "wrong move"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2009-07-01",
+      "effectiveUntil": "2014-07-01",
+      "conditions": [
+        {
+          "key": "time control",
+          "value": "standard"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-illegal-standard",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "penalty for an illegal move",
+      "value": "loss on the second illegal move",
+      "statement": "In standard games under the current Laws (the same wording since 2017), a player's first completed illegal move gives the opponent two extra minutes, and the second loses the game, unless the opponent could not checkmate by any legal moves, in which case it is a draw.",
+      "aliases": [
+        "illegal move",
+        "illegal moves",
+        "second illegal move",
+        "wrong move"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2017-07-01",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "time control",
+          "value": "standard"
+        }
+      ],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-ch-illegal-standard-2009",
+          "reason": "Later editions reduced the number of illegal moves allowed before a loss from three to two."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-ch-illegal-rapid-2014",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2014",
+      "subject": "Chess",
+      "predicate": "penalty for an illegal move",
+      "value": "loss on the first illegal move",
+      "statement": "In rapid games at competitions starting from 1 July 2014 until the 2018 Laws, a completed illegal move lost the game if the arbiter saw it or the opponent claimed it before making their next move.",
+      "aliases": [
+        "illegal move",
+        "illegal moves",
+        "second illegal move",
+        "wrong move"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2014-07-01",
+      "effectiveUntil": "2018-01-01",
+      "conditions": [
+        {
+          "key": "time control",
+          "value": "rapid"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-illegal-blitz-2014",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2014",
+      "subject": "Chess",
+      "predicate": "penalty for an illegal move",
+      "value": "loss on the first illegal move",
+      "statement": "In blitz games at competitions starting from 1 July 2014 until the 2018 Laws, a completed illegal move lost the game if the arbiter saw it or the opponent claimed it before making their next move.",
+      "aliases": [
+        "illegal move",
+        "illegal moves",
+        "second illegal move",
+        "wrong move"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2014-07-01",
+      "effectiveUntil": "2018-01-01",
+      "conditions": [
+        {
+          "key": "time control",
+          "value": "blitz"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-illegal-rapid",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2018",
+      "subject": "Chess",
+      "predicate": "penalty for an illegal move",
+      "value": "loss on the second illegal move",
+      "statement": "Since the 2018 Laws, an illegal move in rapid no longer loses at once: the arbiter applies the standard penalty, so the first illegal move gives the opponent extra time and the second loses, provided it is noticed before the opponent's next move.",
+      "aliases": [
+        "illegal move",
+        "illegal moves",
+        "second illegal move",
+        "wrong move"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2018-01-01",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "time control",
+          "value": "rapid"
+        }
+      ],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-ch-illegal-rapid-2014",
+          "reason": "The 2018 Laws replaced the immediate loss for an illegal move in rapid with the standard two-step penalty."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-ch-illegal-blitz",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2018",
+      "subject": "Chess",
+      "predicate": "penalty for an illegal move",
+      "value": "loss on the second illegal move",
+      "statement": "Since the 2018 Laws, an illegal move in blitz no longer loses at once: the arbiter applies the standard penalty, so the first illegal move gives the opponent extra time and the second loses, provided it is noticed before the opponent's next move.",
+      "aliases": [
+        "illegal move",
+        "illegal moves",
+        "second illegal move",
+        "wrong move"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2018-01-01",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "time control",
+          "value": "blitz"
+        }
+      ],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-ch-illegal-blitz-2014",
+          "reason": "The 2018 Laws replaced the immediate loss for an illegal move in blitz with the standard two-step penalty."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-ch-penalty-standard",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "extra time for the opponent after an illegal move",
+      "value": "two minutes",
+      "statement": "In standard games, the arbiter adds two minutes to the opponent's clock for a player's first completed illegal move.",
+      "aliases": [
+        "extra time",
+        "extra minutes",
+        "time penalty",
+        "how much time",
+        "illegal move"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2017-07-01",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "time control",
+          "value": "standard"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-penalty-rapid-two",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-news-2023",
+      "subject": "Chess",
+      "predicate": "extra time for the opponent after an illegal move",
+      "value": "two minutes",
+      "statement": "For rapid competitions under the 2018 Laws (through 31 December 2022), the illegal-move time penalty was the standard two minutes.",
+      "aliases": [
+        "extra time",
+        "extra minutes",
+        "time penalty",
+        "how much time",
+        "illegal move"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2018-01-01",
+      "effectiveUntil": "2023-01-01",
+      "conditions": [
+        {
+          "key": "time control",
+          "value": "rapid"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-penalty-rapid-one",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "extra time for the opponent after an illegal move",
+      "value": "one minute",
+      "statement": "Since the 2023 Laws of Chess (applied from 1 January 2023), time penalties in rapid games, including the extra time given after an illegal move, are one minute instead of two. FIDE described this as the main change of the 2023 edition.",
+      "aliases": [
+        "extra time",
+        "extra minutes",
+        "time penalty",
+        "how much time",
+        "illegal move"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2023-01-01",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "time control",
+          "value": "rapid"
+        }
+      ],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-ch-penalty-rapid-two",
+          "reason": "The 2023 Laws reduced rapid time penalties from two minutes to one."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-ch-penalty-blitz",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2018",
+      "subject": "Chess",
+      "predicate": "extra time for the opponent after an illegal move",
+      "value": "one minute",
+      "statement": "In blitz games, the time penalties in the Laws are one minute instead of two, including the extra time given to the opponent after an illegal move.",
+      "aliases": [
+        "extra time",
+        "extra minutes",
+        "time penalty",
+        "how much time",
+        "illegal move"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2018-01-01",
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "time control",
+          "value": "blitz"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-threefold",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "draw by threefold repetition or the 50-move rule",
+      "value": "only on a correct claim by the player to move",
+      "statement": "A threefold repetition of the same position, or 50 moves by each side without a capture or pawn move, does not end the game by itself; it is drawn only when the player whose turn it is makes a correct claim.",
+      "aliases": [
+        "threefold",
+        "three times",
+        "repetition",
+        "repeated position",
+        "50-move",
+        "50 moves",
+        "fifty moves"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-fivefold",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "automatic draw by repetition or move count",
+      "value": "automatic after a fivefold repetition or 75 moves",
+      "statement": "Since the 2014 Laws of Chess, the game is drawn automatically, with no claim needed, when the same position has appeared at least five times or 75 moves have been made by each player without a capture or pawn move; a checkmate on the last move takes precedence.",
+      "aliases": [
+        "fivefold",
+        "five times",
+        "75 moves",
+        "75-move",
+        "automatic draw",
+        "automatically",
+        "repetition",
+        "repeated position"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2014-07-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-phone-2009",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2009",
+      "subject": "Chess",
+      "predicate": "mobile phone in the playing venue",
+      "value": "allowed if completely switched off",
+      "statement": "Under the 2009 Laws of Chess, players could bring a mobile phone into the playing venue if it was completely switched off; the player lost the game only if the device made a sound.",
+      "aliases": [
+        "phone",
+        "mobile phone",
+        "smartphone",
+        "switched off",
+        "switched-off",
+        "electronic device",
+        "pocket"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2009-07-01",
+      "effectiveUntil": "2014-07-01",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-phone-2014",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2014",
+      "subject": "Chess",
+      "predicate": "mobile phone in the playing venue",
+      "value": "forbidden; bringing one loses the game",
+      "statement": "Under the 2014 Laws of Chess, a player could not have a mobile phone in the playing venue at all; if it was evident that a player had brought one, the game was lost, unless the competition rules set a lighter penalty.",
+      "aliases": [
+        "phone",
+        "mobile phone",
+        "smartphone",
+        "switched off",
+        "switched-off",
+        "electronic device",
+        "pocket"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2014-07-01",
+      "effectiveUntil": "2017-07-01",
+      "conditions": [],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-ch-phone-2009",
+          "reason": "The 2014 Laws banned phones in the playing venue even when switched off."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-ch-phone-current",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "mobile phone in the playing venue",
+      "value": "forbidden unless approved by the arbiter",
+      "statement": "Under the current Laws of Chess (the same rule since 2017), a player may not have any electronic device not approved by the arbiter in the playing venue during a game, even switched off. Event regulations may allow devices stored switched off in a bag, or set a less severe penalty.",
+      "aliases": [
+        "phone",
+        "mobile phone",
+        "smartphone",
+        "switched off",
+        "switched-off",
+        "electronic device",
+        "pocket"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2017-07-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-ch-phone-2014",
+          "reason": "The 2017 Laws extended the rule to any unapproved electronic device and let event regulations set storage options or penalties."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-ch-resign-2018",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2018",
+      "subject": "Chess",
+      "predicate": "resigning when the opponent cannot checkmate",
+      "value": "a win for the opponent",
+      "statement": "Under the 2018 Laws of Chess, a game was won by the player whose opponent resigned, with no exception for positions where checkmate was impossible.",
+      "aliases": [
+        "resign",
+        "resigns",
+        "resignation",
+        "cannot checkmate",
+        "cannot possibly checkmate"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": "2023-01-01",
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-resign-2023",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "resigning when the opponent cannot checkmate",
+      "value": "a draw",
+      "statement": "Since the 2023 Laws of Chess, a resignation is scored as a draw, not a loss, if the opponent could not checkmate the resigning player's king by any series of legal moves.",
+      "aliases": [
+        "resign",
+        "resigns",
+        "resignation",
+        "cannot checkmate",
+        "cannot possibly checkmate"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2023-01-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": [
+        {
+          "kind": "supersedes",
+          "targetId": "tg-claim-ch-resign-2018",
+          "reason": "The 2023 Laws added the exception that a resignation is a draw when the opponent cannot checkmate."
+        }
+      ]
+    },
+    {
+      "_id": "tg-claim-ch-touch-move",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "touch-move rule",
+      "value": "move the first touched piece that can legally move",
+      "statement": "A player who, on their turn, touches one of their own pieces intending to move it must move the first touched piece that can legally move. Touching the king and then a rook means castling on that side if legal; deliberately touching the rook first rules out castling on that side that move.",
+      "aliases": [
+        "touch move",
+        "touch-move",
+        "touched",
+        "touches a piece",
+        "castle",
+        "castling"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": "2014-07-01",
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-players",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "number of players",
+      "value": "two",
+      "statement": "The game of chess is played between two opponents, who move their pieces on an 8 x 8 board of 64 squares; each side starts with 16 pieces, and White moves first.",
+      "aliases": [
+        "how many players",
+        "players",
+        "three players",
+        "two players",
+        "opponents",
+        "who moves first",
+        "pieces"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-checkmate",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "checkmate",
+      "value": "the checkmating player wins",
+      "statement": "A player wins by checkmating the opponent's king: placing it under attack so that the opponent has no legal move. Checkmate immediately ends the game.",
+      "aliases": [
+        "checkmate",
+        "check mate",
+        "mate",
+        "how do you win",
+        "win the game"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-stalemate",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "stalemate",
+      "value": "draw",
+      "statement": "If the player to move has no legal move and their king is not in check, the game ends immediately in stalemate, which is a draw. A position where neither player can checkmate by any series of legal moves is also a draw.",
+      "aliases": [
+        "stalemate",
+        "no legal move",
+        "dead position"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-promotion",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "pawn promotion",
+      "value": "queen, rook, bishop, or knight",
+      "statement": "A pawn that reaches the far rank must be exchanged, as part of the same move, for a queen, rook, bishop, or knight of the same colour. The choice is not limited to pieces already captured, and the new piece acts immediately.",
+      "aliases": [
+        "promotion",
+        "promote",
+        "pawn reaches",
+        "last rank",
+        "two queens",
+        "queen"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-en-passant",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "en passant",
+      "value": "only on the very next move",
+      "statement": "When a pawn advances two squares from its starting square and lands beside an opponent's pawn, that pawn may capture it as if it had moved only one square. This en passant capture is legal only on the move immediately after the two-square advance.",
+      "aliases": [
+        "en passant",
+        "en-passant",
+        "capture a pawn"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-castling",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "when castling is allowed",
+      "value": "only if neither king nor rook has moved and no square is attacked or blocked",
+      "statement": "Castling is lost for good once the king has moved, or for a rook that has moved. It is temporarily prevented if the king's square, the square it crosses, or the square it lands on is attacked, or if any piece stands between the king and the rook.",
+      "aliases": [
+        "castling",
+        "castle",
+        "can i castle",
+        "in check"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-scoring",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "points for a win, draw, or loss",
+      "value": "1, ½, and 0",
+      "statement": "Unless the event's regulations say otherwise, a win scores one point, a draw half a point, and a loss zero.",
+      "aliases": [
+        "points",
+        "score",
+        "scoring",
+        "half a point",
+        "how many points"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-time-controls",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "what counts as rapid or blitz",
+      "value": "rapid over 10 and under 60 minutes; blitz 10 minutes or less",
+      "statement": "A game is rapid when each player's time, plus 60 times any per-move increment, is more than 10 but less than 60 minutes; it is blitz when that total is 10 minutes or less.",
+      "aliases": [
+        "rapid",
+        "blitz",
+        "what is rapid",
+        "what is blitz",
+        "time control",
+        "minutes"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-adjust",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "adjusting a piece without moving it",
+      "value": "say 'I adjust' first, on your own move",
+      "statement": "Only the player whose move it is may adjust pieces on their squares, and must first say so, for example 'j'adoube' or 'I adjust'. Any other deliberate contact with a piece counts as intending to move or capture it.",
+      "aliases": [
+        "adjust",
+        "j'adoube",
+        "jadoube",
+        "straighten a piece",
+        "fix a piece"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-one-hand",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "hands used to move and press the clock",
+      "value": "one hand, the same hand for the clock",
+      "statement": "Each move must be made with one hand only, and the player must press the clock with the same hand that made the move. Using two hands for a single move and pressing the clock is penalised like an illegal move.",
+      "aliases": [
+        "one hand",
+        "two hands",
+        "press the clock",
+        "same hand"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-late-arrival",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "arriving late to a game",
+      "value": "loss if after the default time, which is zero unless set",
+      "statement": "Event regulations set a default time; if they do not, it is zero. A player who arrives at the board after the default time loses the game unless the arbiter decides otherwise.",
+      "aliases": [
+        "late",
+        "arrive late",
+        "default time",
+        "zero tolerance"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-colours-reversed",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "game started with the wrong colours",
+      "value": "replay if fewer than 10 moves, otherwise continue",
+      "statement": "If a game started with colours reversed and fewer than 10 moves have been made by both players, it is stopped and replayed with the correct colours; after 10 moves or more, the game continues.",
+      "aliases": [
+        "wrong colours",
+        "wrong colors",
+        "colours reversed",
+        "played the wrong colour"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-draw-agreement",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "agreeing a draw",
+      "value": "allowed after both players move, unless event rules restrict it",
+      "statement": "Players may agree a draw once both have made at least one move. Event regulations can forbid draw offers or agreements before a set number of moves, or entirely, without the arbiter's consent. A draw offer is made after moving and before pressing the clock, and cannot be withdrawn.",
+      "aliases": [
+        "draw offer",
+        "offer a draw",
+        "agree a draw",
+        "agreed draw",
+        "sofia rules"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-wrong-draw-claim",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "incorrect draw claim",
+      "value": "opponent gets two extra minutes",
+      "statement": "If a player's claim of a draw by threefold repetition or the 50-move rule is found to be incorrect, the arbiter adds two minutes to the opponent's remaining time and the game continues.",
+      "aliases": [
+        "incorrect claim",
+        "wrong claim",
+        "false claim",
+        "draw claim"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [
+        {
+          "key": "time control",
+          "value": "standard"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-incomplete-promotion",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "promoting without replacing the pawn",
+      "value": "illegal move; the pawn becomes a queen",
+      "statement": "If a player moves a pawn to the last rank and presses the clock without replacing it with a new piece, the move is illegal and the pawn is replaced by a queen of the same colour.",
+      "aliases": [
+        "promotion",
+        "pawn on the last rank",
+        "forgot to promote",
+        "no queen available"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    },
+    {
+      "_id": "tg-claim-ch-flag-fall",
+      "knowledgeBaseId": "tg-kb-chess-laws",
+      "sourceId": "tg-source-ch-laws-2023",
+      "subject": "Chess",
+      "predicate": "running out of time",
+      "value": "loss, unless the opponent cannot checkmate",
+      "statement": "A player who does not complete the required moves in the allotted time loses the game, but it is a draw if the opponent could not checkmate by any series of legal moves.",
+      "aliases": [
+        "out of time",
+        "flag",
+        "flag fall",
+        "time runs out",
+        "lose on time",
+        "timeout"
+      ],
+      "exclusive": true,
+      "version": null,
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "conditions": [],
+      "relations": []
+    }
+  ]
+}

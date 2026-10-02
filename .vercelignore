@@ -9,3 +9,8 @@ coverage
 tmp
 *.png
 *.zip
+
+# Publish the judge-facing recording artwork and screenshots.
+!public/demo/cover.png
+!public/demo/screenshots/*.png
+!public/demo/screenshots.zip

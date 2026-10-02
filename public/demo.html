@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Watch TruthGraph — Sanity Context demo</title>
+  <meta name="description" content="A 102-second walkthrough of TruthGraph: changed rules, historical dates, missing context, and inspectable Sanity evidence.">
+  <meta property="og:title" content="TruthGraph — Which answer applies?">
+  <meta property="og:description" content="Watch the guided demonstration of dates, conditions, and source-backed answers with Sanity Context.">
+  <meta property="og:image" content="https://truthgraph-mauve.vercel.app/demo/cover.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/icon">
+  <style>
+    :root { color-scheme: light; font-family: Arial, sans-serif; color: #233f35; background: #f8faf6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.6; }
+    main { max-width: 1120px; margin: auto; padding: 32px 24px 64px; }
+    a { color: #245b48; text-underline-offset: 4px; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid #a83d2c; outline-offset: 5px; }
+    nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-bottom: 44px; }
+    .brand { font-size: 26px; font-weight: 700; text-decoration: none; }
+    .eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { font: 700 clamp(34px, 5vw, 58px)/1.15 Georgia, serif; margin: 12px 0; }
+    h2 { font: 700 30px/1.25 Georgia, serif; margin-top: 36px; }
+    .intro { max-width: 780px; color: #53645b; }
+    video { display: block; width: 100%; aspect-ratio: 16/9; background: #233f35; border-radius: 8px; margin-top: 25px; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 18px 0; }
+    .note { color: #53645b; font-size: 14px; max-width: 920px; }
+    .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+    figure { margin: 0; }
+    figure img { display: block; width: 100%; border: 1px solid #ced8cc; border-radius: 5px; }
+    figcaption { font-size: 14px; margin-top: 10px; }
+    details { margin-top: 30px; padding: 17px 0; border-block: 1px solid #ced8cc; }
+    summary { cursor: pointer; font-weight: 700; min-height: 32px; }
+    details p { max-width: 880px; }
+    footer { margin-top: 34px; font-size: 13px; color: #53645b; }
+    @media (max-width: 650px) { main { padding: 22px 18px 44px; } nav { margin-bottom: 28px; } .gallery { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<main>
+  <nav aria-label="Demo navigation"><a class="brand" href="/">truthgraph</a><a href="/">Try the live app →</a></nav>
+  <header>
+    <span class="eyebrow">Sanity Challenge / Path One</span>
+    <h1>Which answer applies?</h1>
+    <p class="intro">Watch a short walkthrough of changed rules, historical dates, missing context, and the structured evidence behind each answer.</p>
+    <p class="eyebrow">About 1 minute 42 seconds · 1080p · English neural narration · Captions</p>
+  </header>
+  <video controls playsinline preload="metadata" poster="/demo/cover.png" aria-label="TruthGraph narrated demonstration">
+    <source src="/demo/truthgraph-demo.mp4" type="video/mp4">
+    <track kind="captions" src="/demo/captions.vtt" srclang="en" label="English">
+    Your browser cannot play this video. <a href="/demo/truthgraph-demo.mp4">Download the MP4</a> or <a href="/demo/narration.txt">read the transcript</a>.
+  </video>
+  <div class="links"><a href="/demo/truthgraph-demo.mp4" download>Download video</a><a href="/demo/narration.txt">Read transcript</a><a href="/demo/captions.srt" download>Download captions</a><a href="/demo/screenshots.zip" download>Download screenshots</a></div>
+  <p class="note">Captured from the deployed app on 2 October 2026. The guided examples replay labelled Sanity Context investigations while their underlying content is unchanged. The Evidence Lab shows a hypothetical comparison of retrieved evidence. Narration uses a synthetic Microsoft Ava voice.</p>
+  <h2>Three moments to look for</h2>
+  <div class="gallery">
+    <figure><a href="/demo/screenshots/04-historical-date.png"><img src="/demo/screenshots/04-historical-date.png" width="1600" height="810" loading="lazy" alt="TruthGraph applies the six-second goalkeeper rule for a match on 1 March 2025, while the keyword result returns a rule that was not yet effective."></a><figcaption><strong>The match date decides.</strong> A relevant rule can be wrong for the requested date.</figcaption></figure>
+    <figure><a href="/demo/screenshots/05-clarification.png"><img src="/demo/screenshots/05-clarification.png" width="1600" height="810" loading="lazy" alt="TruthGraph requests the match type before answering how many substitutes are allowed."></a><figcaption><strong>Missing context stays visible.</strong> The answer waits for the match type.</figcaption></figure>
+    <figure><a href="/demo/screenshots/06-evidence-lab.png"><img src="/demo/screenshots/06-evidence-lab.png" width="1600" height="810" loading="lazy" alt="The Evidence Lab changes three claim states when club friendly is supplied as a hypothetical match type."></a><figcaption><strong>Explore why evidence applies.</strong> Change a condition and inspect its effect on the retrieved claims.</figcaption></figure>
+  </div>
+  <div class="links"><a href="/demo/screenshots/07-structured-claim.png">Inspect a structured claim</a><a href="/demo/screenshots/08-sanity-trace.png">View the Sanity Context trace</a></div>
+  <details><summary>How judges can try it</summary><p>Open the <a href="/">live app</a>, choose <strong>Start the guided tour</strong>, and select a tour card. The recording and guided examples require no account or access code. Custom live questions require the app access code supplied separately by the project author.</p></details>
+  <footer>TruthGraph · Football, cricket, and chess · Source-grounded answers with Sanity Context</footer>
+</main>
+</body>
+</html>

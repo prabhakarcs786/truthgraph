@@ -8,26 +8,27 @@ tags: devchallenge, sanitychallenge, sanity, ai
 
 ## What I Built
 
-TruthGraph answers the question a search box can't: **which rule applies**. Sports rules change every season, and the right answer depends on the match date, the kind of match, and the competition. Ask "What happens if a goalkeeper holds the ball too long?" and a keyword search happily returns last season's rule. TruthGraph knows the 2025/26 Laws replaced it, applies the rule in force on your match date, and asks "which kind of match?" when the answer depends on it.
+TruthGraph answers the question a search box can't: **which rule applies**. Sports rules change every season, and the right answer depends on the match date, the kind of match, and the competition. Ask "What happens if a goalkeeper holds the ball too long?" and a keyword search can find a rule without establishing whether it applied on the match date. TruthGraph knows the 2025/26 Laws replaced it, applies the rule in force on your match date, and asks "which kind of match?" when the answer depends on it.
 
 It ships three everyday collections built from official rulebooks: football (IFAB Laws of the Game), cricket (MCC Laws and ICC playing conditions), and chess (FIDE Laws of Chess).
 
-Every answer sits next to what plain keyword search would have returned from the same Knowledge Base, and why that would be wrong.
+Each result compares its evidence with the top keyword match from the same Knowledge Base and explains whether that match applies.
 
 ## Demo
 
-- Live application: https://truthgraph-mauve.vercel.app
-- Source repository: https://github.com/prabhakarcs786/truthgraph
+- Live application: [Open TruthGraph](https://truthgraph-mauve.vercel.app/)
+- Source repository: [prabhakarcs786/truthgraph](https://github.com/prabhakarcs786/truthgraph) (private; reviewer access is required).
+- Recording: [Watch the narrated demo — about 1 minute 42 seconds](https://truthgraph-mauve.vercel.app/demo.html), with English neural narration and captions. [Direct MP4](https://truthgraph-mauve.vercel.app/demo/truthgraph-demo.mp4) · [Transcript](https://truthgraph-mauve.vercel.app/demo/narration.txt). No sign-in is required to watch.
 - Guided tour: open the app and choose **Start the guided tour**. No access code is needed.
 - Custom questions: need a judge access code, which keeps the free model quota from being drained by the public. Judges can request it in a comment or DM and I will send it privately.
 
-![The guided tour on the football collection, no access code needed](https://raw.githubusercontent.com/prabhakarcs786/truthgraph/main/docs/screenshots/1-home.png)
+![The guided tour on the football collection, no access code needed](https://truthgraph-mauve.vercel.app/demo/screenshots/02-guided-tour.png)
 
-![Match date matters: keyword search returns the newest rule, TruthGraph applies the rule in force on 1 March 2025](https://raw.githubusercontent.com/prabhakarcs786/truthgraph/main/docs/screenshots/2-match-date.png)
+![Match date matters: keyword search returns the newest rule, TruthGraph applies the rule in force on 1 March 2025](https://truthgraph-mauve.vercel.app/demo/screenshots/04-historical-date.png)
 
-![Depends on the match: TruthGraph asks which kind of match instead of guessing](https://raw.githubusercontent.com/prabhakarcs786/truthgraph/main/docs/screenshots/3-clarification.png)
+![Depends on the match: TruthGraph asks which kind of match instead of guessing](https://truthgraph-mauve.vercel.app/demo/screenshots/05-clarification.png)
 
-### Three-minute walkthrough
+### Try the examples yourself
 
 | Tour card | TruthGraph | Plain keyword search |
 | --- | --- | --- |
@@ -40,6 +41,10 @@ Every answer sits next to what plain keyword search would have returned from the
 | Chess, older tournament: a switched-off phone in your pocket in 2012 | Allowed under the 2009 Laws (today it is forbidden) | Today's rule |
 
 Beyond the tour, judges with the access code can ask everyday questions (offside, penalties, LBW, follow-on, castling, stalemate, running out of time) and see each answer cite the exact rule and official page. When sources genuinely disagree, TruthGraph shows the disagreement instead of picking a winner, and **Curate** (admin code) records which claim takes precedence as a structured relationship on the Sanity claim.
+
+![The Evidence Lab shows how a hypothetical club-friendly condition changes the retrieved claim states](https://truthgraph-mauve.vercel.app/demo/screenshots/06-evidence-lab.png)
+
+The Evidence Lab explores the retrieved snapshot without a new model call. Its comparison is explicitly hypothetical, and the original answer remains visible.
 
 ## Sanity Project
 
@@ -61,9 +66,11 @@ The agent connects to a Knowledge Base-only Context MCP endpoint, reads `initial
 
 Deterministic code then applies dates, versions, conditions and explicit corrections, and detects remaining conflicts. Precedence decisions recorded in Curate are stored on the Sanity claim, so they take effect on the next question without rebuilding the Knowledge Base.
 
+![The agent trace exposes the recorded Sanity Context retrieval, citation validation, and applicability checks](https://truthgraph-mauve.vercel.app/demo/screenshots/08-sanity-trace.png)
+
 ## Why Structured Content Matters
 
-Every tour question is answered differently once structure is applied. The baseline panel ranks the same claims by keyword relevance and then explains which structural fact (date window, match type or other condition, replacement, correction, or conflict) makes its top hit wrong. Where keyword search happens to agree, the app says so.
+Each tour question demonstrates how structure determines whether a retrieved rule applies. The baseline panel ranks the same claims by keyword relevance and then explains which structural fact (date window, match type or other condition, replacement, correction, or conflict) makes its top hit wrong. Where keyword search happens to agree, the app says so.
 
 ## Data Sources (verified October 1, 2026)
 
@@ -83,7 +90,7 @@ Built with GitHub Copilot in VS Code, Next.js 16, Sanity, the Vercel AI SDK with
 - 30 Playwright tests on desktop and mobile with axe accessibility checks: tour, comparison, curation, sharing consent, uploads.
 - A live run of all 14 sports tour questions against Sanity Context, each matching the expected claim or clarification. One run exposed the model filling in a competition the question never named; grounding now keeps a condition only when the question mentions it, as it already did for dates.
 
-To stay within the free-tier model quota, each guided-tour answer is a recorded live run. It is reused only while the question, every canonical record, and the set of claims in effect today are unchanged, and the trace says when it was recorded. Custom questions always run live.
+To stay within the free-tier model quota, each guided-tour answer is a recorded live run. It is reused only while the question, every canonical record, and the set of claims in effect today are unchanged, and the answer label and trace say when it was recorded. The walkthrough shows those recorded results and uses a synthetic Microsoft Ava voice. Custom questions always run live.
 
 ### Limitations
 

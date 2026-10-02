@@ -6,6 +6,20 @@ Ask a question about a selected knowledge base. TruthGraph retrieves claims, che
 
 This directory retains its original name so existing workspace paths still work. It is independent of Path Two.
 
+## Watch the Demo
+
+[Watch the narrated walkthrough](https://truthgraph-mauve.vercel.app/demo.html) — about **1 minute 42 seconds**, in 1080p with English neural narration and captions. The video, screenshots, and guided examples are public and need no account or access code.
+
+[![Watch TruthGraph: which answer applies?](https://truthgraph-mauve.vercel.app/demo/cover.png)](https://truthgraph-mauve.vercel.app/demo.html)
+
+[Open the live app](https://truthgraph-mauve.vercel.app/) · [Download MP4](https://truthgraph-mauve.vercel.app/demo/truthgraph-demo.mp4) · [Read transcript](https://truthgraph-mauve.vercel.app/demo/narration.txt) · [Download screenshots](https://truthgraph-mauve.vercel.app/demo/screenshots.zip)
+
+The walkthrough shows a changed goalkeeper rule, the same question for an earlier match date, missing match-type context, the Evidence Lab, and an inspectable Sanity claim and trace. The guided results are labelled recorded Sanity Context investigations, replayed while content is unchanged. Custom live questions require the judge access code.
+
+![A historical match date changes the applicable answer](https://truthgraph-mauve.vercel.app/demo/screenshots/04-historical-date.png)
+
+*For a match on 1 March 2025, the six-second rule applies; the newer keyword result was not yet in effect.*
+
 ## Run Locally
 
 Use Node.js 24 LTS:
@@ -15,7 +29,7 @@ npm ci
 npm run dev -- --port 3000
 ```
 
-Open http://localhost:3000. The first screen starts with your documents, not a preselected framework sample. Choose files, drop them onto the upload area, or paste text. Review the collection and optionally enter a first question to **Save and investigate** immediately. Existing example collections are secondary choices. Inspect source previews, citations, excluded claims, conflicts, and the agent trace; export the investigation as Markdown.
+Open http://localhost:3000. Choose **Start the guided tour** to explore the example collections, or add your documents by choosing files, dropping them onto the upload area, or pasting text. Review an import and optionally enter a first question to **Save and investigate** immediately. Inspect source previews, citations, excluded claims, conflicts, and the agent trace; export the investigation as Markdown.
 
 Use **Import knowledge base** to add your own documents. Local imports are saved in this browser and can be investigated immediately; no account or code change is needed. See [Add Your Own Content](#add-your-own-content) for the reviewed upload and live indexing flow.
 
@@ -31,7 +45,7 @@ The default `APP_MODE=demo` uses corpus-driven token matching, not a language mo
 
 Immediate AI does not wait for Sanity indexing and does not publish a shared corpus. Its result is explicitly labelled **Direct upload / AI**, never Sanity MCP. Input and output are bounded; it uses no model tools or arbitrary URL fetching. Unknown or duplicated claim IDs are rejected, answers retain source statements, and self-declared source authority cannot produce a high-confidence badge. A provider error is shown, not silently replaced by a local answer.
 
-This is a credible live demonstration for supported documents, not a promise to answer every question about every format. Absent evidence returns an insufficient result; effective-date and conflict reasoning still need authored metadata. Direct-upload analysis is an additional convenience, not a substitute for the challenge's real Sanity demonstration. Cloud calls and deployment remain unverified until configured and exercised with real credentials.
+This is a credible live demonstration for supported documents, not a promise to answer every question about every format. Absent evidence returns an insufficient result; effective-date and conflict reasoning still need authored metadata. Direct-upload analysis is an additional convenience, not a substitute for the challenge's real Sanity demonstration. The hosted sports guided tour was exercised through the deployed app for the 2 October 2026 recording. A separate installation still needs its own credentials and live validation; this recording does not verify direct-upload AI.
 
 ## Evidence Lab
 
@@ -40,6 +54,8 @@ After an investigation, open **Evidence Lab** to compare the original claim stat
 Uncheck sources to test how much the result depends on them. Every claim keeps its original statement, source, before/after state, and explanation. The original answer and conflicts are never replaced; excluding a disagreeing source is not a resolution. Unknown dates, partial version overlaps, missing conditions, and correction targets remain uncertain.
 
 Use **Download comparison** for a portable JSON record containing the original investigation, scenario context, source exclusions, claim-state changes, and unresolved gaps. It is explicitly hypothetical, not a new live answer or a cryptographic proof. Only already retrieved evidence is considered, other evidence may exist, and comparisons do not establish freshness or completeness. A changed question disables the old comparison until a new investigation finishes. Exports may contain your document excerpts; review them before sharing.
+
+![The Evidence Lab evaluates a hypothetical club-friendly condition](https://truthgraph-mauve.vercel.app/demo/screenshots/06-evidence-lab.png)
 
 ## Guided Tour, Comparison, and Curation
 

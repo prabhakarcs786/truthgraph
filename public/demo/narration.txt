@@ -1,0 +1,29 @@
+TruthGraph — submission walkthrough
+English neural voice: Microsoft Ava Multilingual
+
+0:00 — Which answer applies?
+Meet TruthGraph. It's built with Sanity Context to answer a simple question: which rule actually applies? Because when rules change, finding a relevant document is only the first step.
+
+0:12 — A guided showcase
+Let's open the guided tour. You can try these examples without an access code.
+
+0:17 — 01 / A rule changes
+Say a goalkeeper holds the ball for too long. What happens next? Today, more than eight seconds means a corner kick. TruthGraph cites the rule behind that answer and keeps the older version available for comparison.
+
+0:30 — 02 / The date changes the answer
+Now, let's ask the same question for a match on March first, twenty twenty-five. This time, it's six seconds and an indirect free kick. The keyword result finds the newer rule, but TruthGraph explains why that rule didn't apply yet.
+
+0:44 — 03 / Missing context stays visible
+What about substitutes? How many can a team use? That depends on the match. So TruthGraph asks for the missing context before giving a number. Club friendlies, international friendlies, and competition matches have different conditions.
+
+0:59 — Explore the evidence
+In the Evidence Lab, we can try club friendly and see which claims apply. This is a hypothetical comparison of the retrieved evidence, so it doesn't pretend to be a new live answer.
+
+1:10 — Inspect the structured claim
+And we can inspect the claim itself, including its source, match type, and effective date. The reasoning is there to review.
+
+1:18 — Follow the Sanity Context trace
+Finally, the agent trace shows how Sanity Context retrieved and validated the evidence. These guided examples replay labelled, recorded runs while the content stays unchanged. Custom live questions use the judge access code.
+
+1:33 — Try the guided tour
+Try football, cricket, or chess using the link on screen. TruthGraph. Know which answer applies, and see why.

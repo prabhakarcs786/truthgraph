@@ -1,0 +1,119 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:01.383
+Meet TruthGraph.
+
+2
+00:00:01.383 --> 00:00:06.857
+It's built with Sanity Context to answer a simple question: which rule
+actually applies?
+
+3
+00:00:06.857 --> 00:00:12.038
+Because when rules change, finding a relevant document is only the first
+step.
+
+4
+00:00:12.038 --> 00:00:13.810
+Let's open the guided tour.
+
+5
+00:00:13.810 --> 00:00:17.092
+You can try these examples without an access code.
+
+6
+00:00:17.105 --> 00:00:19.738
+Say a goalkeeper holds the ball for too long.
+
+7
+00:00:19.738 --> 00:00:21.122
+What happens next?
+
+8
+00:00:21.122 --> 00:00:24.289
+Today, more than eight seconds means a corner kick.
+
+9
+00:00:24.289 --> 00:00:30.127
+TruthGraph cites the rule behind that answer and keeps the older version
+available for comparison.
+
+10
+00:00:30.138 --> 00:00:34.932
+Now, let's ask the same question for a match on March first, twenty twenty-
+five.
+
+11
+00:00:34.932 --> 00:00:38.949
+This time, it's six seconds and an indirect free kick.
+
+12
+00:00:38.949 --> 00:00:44.960
+The keyword result finds the newer rule, but TruthGraph explains why that
+rule didn't apply yet.
+
+13
+00:00:44.971 --> 00:00:46.452
+What about substitutes?
+
+14
+00:00:46.452 --> 00:00:48.236
+How many can a team use?
+
+15
+00:00:48.236 --> 00:00:49.947
+That depends on the match.
+
+16
+00:00:49.947 --> 00:00:53.952
+So TruthGraph asks for the missing context before giving a number.
+
+17
+00:00:53.952 --> 00:00:59.601
+Club friendlies, international friendlies, and competition matches have
+different conditions.
+
+18
+00:00:59.605 --> 00:01:03.573
+In the Evidence Lab, we can try club friendly and see which claims apply.
+
+19
+00:01:03.573 --> 00:01:10.515
+This is a hypothetical comparison of the retrieved evidence, so it doesn't
+pretend to be a new live answer.
+
+20
+00:01:10.515 --> 00:01:16.231
+And we can inspect the claim itself, including its source, match type, and
+effective date.
+
+21
+00:01:16.231 --> 00:01:18.665
+The reasoning is there to review.
+
+22
+00:01:18.681 --> 00:01:24.300
+Finally, the agent trace shows how Sanity Context retrieved and validated
+the evidence.
+
+23
+00:01:24.300 --> 00:01:30.053
+These guided examples replay labelled, recorded runs while the content stays
+unchanged.
+
+24
+00:01:30.053 --> 00:01:33.695
+Custom live questions use the judge access code.
+
+25
+00:01:33.695 --> 00:01:37.433
+Try football, cricket, or chess using the link on screen.
+
+26
+00:01:37.433 --> 00:01:38.586
+TruthGraph.
+
+27
+00:01:38.586 --> 00:01:41.461
+Know which answer applies, and see why.
